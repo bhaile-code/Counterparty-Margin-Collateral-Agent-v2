@@ -1,0 +1,11 @@
+description,market_value,maturity_min,maturity_max,currency,valuation_scenario
+US cash deposit,500000,,,USD,Moody's First Trigger Event
+US Treasury Bill - 6 month,1000000,,0.5,USD,Moody's First Trigger Event
+US Treasury Note 5yr,3500000,2.5,5,USD,Moody's Second Trigger Event
+Treasury 10-year bond,2000000,7,10,USD,S&P Approved Ratings Downgrade
+Short-term US Treasury,1500000,,1,USD,Moody's First Trigger Event
+US T-bond maturing 2035,1800000,10,,USD,S&P Required Ratings Downgrade
+Cash collateral USD,750000,,,USD,Moody's First Trigger Event
+Mid-term Treasury securities,4200000,1,10,USD,Moody's Second Trigger Event
+US Treasury zero coupon,800000,0.25,0.75,USD,Moody's First Trigger Event
+Long-dated Treasury,2500000,10,30,USD,S&P Approved Ratings Downgrade

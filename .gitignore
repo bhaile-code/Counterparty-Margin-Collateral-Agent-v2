@@ -1,0 +1,84 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+.Python
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+lib/
+lib64/
+parts/
+sdist/
+var/
+wheels/
+pip-wheel-metadata/
+share/python-wheels/
+*.egg-info/
+.installed.cfg
+*.egg
+MANIFEST
+
+# Virtual environments
+.venv/
+venv/
+ENV/
+env/
+.virtualenv/
+
+# Environment variables
+.env
+.env.local
+.env.*.local
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+
+# Jupyter Notebook
+.ipynb_checkpoints
+
+# Testing
+.pytest_cache/
+.coverage
+htmlcov/
+*.cover
+.hypothesis/
+
+# Data files (PDFs and processed data)
+backend/data/pdfs/*.pdf
+backend/data/parsed/*.json
+backend/data/extractions/*.json
+
+# Keep directory structure files
+!backend/data/pdfs/.gitkeep
+!backend/data/parsed/.gitkeep
+!backend/data/extractions/.gitkeep
+
+# Logs
+*.log
+
+# OS artifacts
+nul
+Thumbs.db
+.DS_Store
+
+# Temporary deletion folder
+z_delete/
+
+# UV lock files (optional - uncomment if you want to exclude)
+# uv.lock
+
+# Workdocs 
+docs/
+CLAUDE.md
+z_delete/
+scripts/

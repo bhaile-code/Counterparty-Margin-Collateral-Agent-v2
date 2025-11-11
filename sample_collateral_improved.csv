@@ -1,0 +1,11 @@
+description,market_value,maturity_min,maturity_max,currency,valuation_scenario
+Cash: US Dollars in depository account form,500000,,,USD,Moody's First Trigger Event
+U.S. Treasury Securities having a remaining maturity of up to and not more than 1 year,1000000,0,1,USD,Moody's First Trigger Event
+Treasuries having a remaining maturity of greater than 1 year but not more than 10 years,3500000,3,5,USD,Moody's Second Trigger Event
+Treasuries having a remaining maturity of greater than 1 year but not more than 10 years,2000000,7,10,USD,S&P Approved Ratings Downgrade
+U.S. Treasury Securities having a remaining maturity of up to and not more than 1 year,1500000,0.5,1,USD,Moody's First Trigger Event
+Treasuries having a remaining maturity of greater than 10 years but not more than 30 years,1800000,10,15,USD,S&P Required Ratings Downgrade
+Cash: US Dollars in depository account form,750000,,,USD,Moody's First Trigger Event
+Treasuries having a remaining maturity of greater than 1 year but not more than 10 years,4200000,5,7,USD,Moody's Second Trigger Event
+U.S. Treasury Securities having a remaining maturity of up to and not more than 1 year,800000,0,1,USD,Moody's First Trigger Event
+Treasuries having a remaining maturity of greater than 10 years but not more than 30 years,2500000,15,20,USD,S&P Approved Ratings Downgrade
