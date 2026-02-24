@@ -1,0 +1,26 @@
+{
+  "job_id": "job_df99dd2a-5a60-47ec-a226-07f67e6595ae_1762818038961",
+  "document_id": "df99dd2a-5a60-47ec-a226-07f67e6595ae",
+  "status": "processing",
+  "current_step": "normalize",
+  "progress": 40,
+  "created_at": "2025-11-10T16:40:38.961639",
+  "updated_at": "2025-11-10T16:42:31.414588",
+  "started_at": "2025-11-10T16:40:38.963267",
+  "completed_at": null,
+  "options": {
+    "normalize_method": "multi-agent",
+    "save_intermediate_steps": false,
+    "calculate_margin": false,
+    "portfolio_value": null
+  },
+  "results": {
+    "parse_id": "parse_df99dd2a-5a60-47ec-a226-07f67e6595ae_20251110_164038",
+    "extraction_id": "extract_parse_df99dd2a-5a60-47ec-a226-07f67e6595ae_20251110_164038_20251110_164107"
+  },
+  "errors": [],
+  "step_timings": {
+    "parse": 28.800081729888916,
+    "extract": 83.64466834068298
+  }
+}

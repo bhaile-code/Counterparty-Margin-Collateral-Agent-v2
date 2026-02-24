@@ -1,0 +1,44 @@
+{
+  "job_id": "job_b103b729-5aa4-4c09-9b22-a6b0b8026a29_1762817443442",
+  "document_id": "b103b729-5aa4-4c09-9b22-a6b0b8026a29",
+  "status": "failed",
+  "current_step": "map",
+  "progress": 70,
+  "created_at": "2025-11-10T16:30:43.442536",
+  "updated_at": "2025-11-10T16:34:35.918394",
+  "started_at": "2025-11-10T16:30:44.857244",
+  "completed_at": "2025-11-10T16:34:35.918383",
+  "options": {
+    "normalize_method": "multi-agent",
+    "save_intermediate_steps": false,
+    "calculate_margin": false,
+    "portfolio_value": null
+  },
+  "results": {
+    "parse_id": "parse_b103b729-5aa4-4c09-9b22-a6b0b8026a29_20251110_163044",
+    "extraction_id": "extract_parse_b103b729-5aa4-4c09-9b22-a6b0b8026a29_20251110_163044_20251110_163055",
+    "normalized_collateral_id": "b103b729-5aa4-4c09-9b22-a6b0b8026a29",
+    "normalization_metadata": {
+      "overall_confidence": 0.9086770833333333,
+      "requires_human_review": false,
+      "agents_used": [
+        "collateral",
+        "temporal",
+        "currency"
+      ],
+      "total_processing_time": 151.8563675880432
+    }
+  },
+  "errors": [
+    {
+      "step": "map",
+      "message": "1 validation error for CSATerms\ncurrency\n  Input should be 'USD' [type=enum, input_value='US Dollar', input_type=str]\n    For further information visit https://errors.pydantic.dev/2.9/v/enum",
+      "timestamp": "2025-11-10T16:34:35.918391"
+    }
+  ],
+  "step_timings": {
+    "parse": 10.506338119506836,
+    "extract": 68.67380380630493,
+    "normalize": 151.85704612731934
+  }
+}

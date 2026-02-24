@@ -1,0 +1,30 @@
+{
+  "job_id": "job_89cebbc4-bc35-4e8a-b938-df0e11256bb8_1762845797827",
+  "document_id": "89cebbc4-bc35-4e8a-b938-df0e11256bb8",
+  "status": "failed",
+  "current_step": "extract",
+  "progress": 20,
+  "created_at": "2025-11-11T00:23:17.827475",
+  "updated_at": "2025-11-11T00:23:31.806083",
+  "started_at": "2025-11-11T00:23:17.829452",
+  "completed_at": "2025-11-11T00:23:31.806066",
+  "options": {
+    "normalize_method": "multi-agent",
+    "save_intermediate_steps": false,
+    "calculate_margin": false,
+    "portfolio_value": null
+  },
+  "results": {
+    "parse_id": "parse_89cebbc4-bc35-4e8a-b938-df0e11256bb8_20251111_002317"
+  },
+  "errors": [
+    {
+      "step": "extract",
+      "message": "Extract failed: Extract API error for parse_id parse_89cebbc4-bc35-4e8a-b938-df0e11256bb8_20251111_002317: 400 - {\"error\":\"Field extraction invalid: Failed to extract the fields from the input schema. Error: 'Schema validation failed: Only JSON schema version 2020-12 is supported. Invalid JSON Schema: None is not of type 'object', 'boolean'\\n\\nFailed validating 'type' in metaschema['allOf'][0]:\\n    {'$schema': 'https://json-schema.org/draft/2020-12/schema',\\n     '$id': 'https://json-schema.org/draft/2020-12/meta/core',\\n     '$vocabulary': {'https://json-schema.org/draft/2020-12/vocab/core': True},\\n     '$dynamicAnchor': 'meta',\\n     'title': 'Core vocabulary meta-schema',\\n     'type': ['object', 'boolean'],\\n     'properties': {'$id': {'$ref': '#/$defs/uriReferenceString',\\n                            '$comment': 'Non-empty fragments not allowed.',\\n                            'pattern': '^[^#]*#?$'},\\n                    '$schema': {'$ref': '#/$defs/uriString'},\\n                    '$ref': {'$ref': '#/$defs/uriReferenceString'},\\n                    '$anchor': {'$ref': '#/$defs/anchorString'},\\n                    '$dynamicRef': {'$ref': '#/$defs/uriReferenceString'},\\n                    '$dynamicAnchor': {'$ref': '#/$defs/anchorString'},\\n                    '$vocabulary': {'type': 'object',\\n                                    'propertyNames': {'$ref': '#/$defs/uriString'},\\n                                    'additionalProperties': {'type': 'boolean'}},\\n                    '$comment': {'type': 'string'},\\n                    '$defs': {'type': 'object',\\n                              'additionalProperties': {'$dynamicRef': '#meta'}}},\\n     '$defs': {'anchorString': {'type': 'string',\\n                                'pattern': '^[A-Za-z_][-A-Za-z0-9._]*$'},\\n               'uriString': {'type': 'string', 'format': 'uri'},\\n               'uriReferenceString': {'type': 'string',\\n                                      'format': 'uri-reference'}}}\\n\\nOn schema:\\n    None'\"}",
+      "timestamp": "2025-11-11T00:23:31.806077"
+    }
+  ],
+  "step_timings": {
+    "parse": 12.98144245147705
+  }
+}

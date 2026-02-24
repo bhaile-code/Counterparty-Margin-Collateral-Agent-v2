@@ -1,0 +1,172 @@
+{
+  "document_id": "csa_credit_suisse",
+  "description": "Ground truth normalization data for Credit Suisse / Fifth Third Auto Trust 2008-1 CSA",
+  "expected_normalized_collateral": [
+    {
+      "original_text": "Cash: US Dollars in depository account form: 100%",
+      "standardized_type": "CASH_USD",
+      "maturity_buckets": [
+        {
+          "min_maturity_years": null,
+          "max_maturity_years": null,
+          "valuation_percentage": 100.0,
+          "haircut_percentage": 0.0
+        }
+      ],
+      "min_confidence": 0.95,
+      "notes": "Cash has no maturity, single column value used"
+    },
+    {
+      "original_text": "U.S. Treasury Securities: having a remaining maturity of up to and not more than 1 year: 100%",
+      "standardized_type": "US_TREASURY",
+      "maturity_buckets": [
+        {
+          "min_maturity_years": 0.0,
+          "max_maturity_years": 1.0,
+          "valuation_percentage": 100.0,
+          "haircut_percentage": 0.0
+        }
+      ],
+      "min_confidence": 0.90,
+      "notes": "First rating event column (Moody's First Trigger)"
+    },
+    {
+      "original_text": "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years: 99% (1-2yr) 98% (2-3yr) 97%(3-5yr) 96% (5-7yr) 94% (7-10yr)",
+      "standardized_type": "US_TREASURY",
+      "maturity_buckets": [
+        {
+          "min_maturity_years": 1.0,
+          "max_maturity_years": 2.0,
+          "valuation_percentage": 99.0,
+          "haircut_percentage": 1.0
+        },
+        {
+          "min_maturity_years": 2.0,
+          "max_maturity_years": 3.0,
+          "valuation_percentage": 98.0,
+          "haircut_percentage": 2.0
+        },
+        {
+          "min_maturity_years": 3.0,
+          "max_maturity_years": 5.0,
+          "valuation_percentage": 97.0,
+          "haircut_percentage": 3.0
+        },
+        {
+          "min_maturity_years": 5.0,
+          "max_maturity_years": 7.0,
+          "valuation_percentage": 96.0,
+          "haircut_percentage": 4.0
+        },
+        {
+          "min_maturity_years": 7.0,
+          "max_maturity_years": 10.0,
+          "valuation_percentage": 94.0,
+          "haircut_percentage": 6.0
+        }
+      ],
+      "min_confidence": 0.85,
+      "notes": "Complex maturity buckets, no overlap expected"
+    },
+    {
+      "original_text": "Treasuries having a remaining maturity of greater than 10 years: 90% (10-20yr) 88% (>20yr)",
+      "standardized_type": "US_TREASURY",
+      "maturity_buckets": [
+        {
+          "min_maturity_years": 10.0,
+          "max_maturity_years": 20.0,
+          "valuation_percentage": 90.0,
+          "haircut_percentage": 10.0
+        },
+        {
+          "min_maturity_years": 20.0,
+          "max_maturity_years": null,
+          "valuation_percentage": 88.0,
+          "haircut_percentage": 12.0
+        }
+      ],
+      "min_confidence": 0.85,
+      "notes": "Open-ended maturity (>20yr) represented as null max"
+    }
+  ],
+  "expected_temporal": {
+    "notification_time": {
+      "original_text": "1:00 p.m., New York time",
+      "time": "13:00:00",
+      "timezone": "America/New_York",
+      "min_confidence": 0.95,
+      "notes": "Explicit timezone mentioned"
+    },
+    "valuation_time": {
+      "original_text": "close of business on the Local Business Day before the Valuation Date",
+      "time": "17:00:00",
+      "timezone": "America/New_York",
+      "min_confidence": 0.75,
+      "notes": "Qualitative time, inferred timezone, should flag for review"
+    }
+  },
+  "expected_currency": {
+    "base_currency": {
+      "original_text": "US Dollars",
+      "currency_code": "USD",
+      "min_confidence": 1.0
+    },
+    "mta_party_a": {
+      "original_text": "$50,000",
+      "amount": 50000.0,
+      "currency_code": "USD",
+      "is_infinity": false,
+      "min_confidence": 0.95
+    },
+    "mta_party_b": {
+      "original_text": "$50,000",
+      "amount": 50000.0,
+      "currency_code": "USD",
+      "is_infinity": false,
+      "min_confidence": 0.95
+    },
+    "threshold_party_a": {
+      "original_text": "Infinity",
+      "amount": null,
+      "currency_code": "USD",
+      "is_infinity": true,
+      "min_confidence": 1.0,
+      "notes": "Special value 'Infinity' handled correctly"
+    },
+    "threshold_party_b": {
+      "original_text": "Not Applicable",
+      "amount": null,
+      "currency_code": "USD",
+      "is_not_applicable": true,
+      "min_confidence": 1.0
+    },
+    "rounding": {
+      "original_text": "$10,000",
+      "amount": 10000.0,
+      "currency_code": "USD",
+      "min_confidence": 0.95
+    }
+  },
+  "validation_expectations": {
+    "should_pass_currency_consistency": true,
+    "should_pass_timezone_consistency": true,
+    "should_pass_date_consistency": true,
+    "should_pass_business_rules": true,
+    "should_pass_collateral_logic": true,
+    "expected_warnings": [
+      {
+        "type": "low_confidence",
+        "field": "valuation_time",
+        "message": "Inferred timezone from context, confidence below 0.80"
+      }
+    ],
+    "notes": "All validation checks should pass with one low-severity warning"
+  },
+  "processing_expectations": {
+    "min_agents_used": 3,
+    "agents_required": ["collateral", "temporal", "currency"],
+    "expected_self_corrections": 0,
+    "max_processing_time_seconds": 600,
+    "notes": "Expected clean processing with no self-corrections needed"
+  }
+}

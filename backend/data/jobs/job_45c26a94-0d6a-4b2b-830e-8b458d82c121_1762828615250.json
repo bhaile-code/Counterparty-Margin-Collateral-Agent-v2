@@ -1,0 +1,115 @@
+{
+  "job_id": "job_45c26a94-0d6a-4b2b-830e-8b458d82c121_1762828615250",
+  "document_id": "45c26a94-0d6a-4b2b-830e-8b458d82c121",
+  "status": "completed",
+  "current_step": "done",
+  "progress": 100,
+  "created_at": "2025-11-10T19:36:55.250523",
+  "updated_at": "2025-11-10T19:38:04.075927",
+  "started_at": "2025-11-10T19:36:55.252651",
+  "completed_at": "2025-11-10T19:38:04.075907",
+  "options": {
+    "normalize_method": "multi-agent",
+    "save_intermediate_steps": false,
+    "calculate_margin": false,
+    "portfolio_value": null
+  },
+  "results": {
+    "parse_id": "parse_45c26a94-0d6a-4b2b-830e-8b458d82c121_20251110_193655",
+    "extraction_id": "extract_parse_45c26a94-0d6a-4b2b-830e-8b458d82c121_20251110_193655_20251110_193706",
+    "normalized_collateral_id": "45c26a94-0d6a-4b2b-830e-8b458d82c121",
+    "normalization_metadata": {
+      "overall_confidence": 0.9475,
+      "requires_human_review": false,
+      "agents_used": [
+        "collateral",
+        "temporal",
+        "currency"
+      ],
+      "total_processing_time": 40.07510733604431
+    },
+    "csa_terms_id": "45c26a94-0d6a-4b2b-830e-8b458d82c121",
+    "csa_terms": {
+      "party_a": "JPMORGAN CHASE BANK, N.A.",
+      "party_b": "ARCOS DORADOS B.V.",
+      "party_a_threshold": 0.0,
+      "party_b_threshold": 25000000.0,
+      "party_a_minimum_transfer_amount": 250000.0,
+      "party_b_minimum_transfer_amount": 250000.0,
+      "party_a_independent_amount": 0.0,
+      "party_b_independent_amount": 0.0,
+      "rounding": 10000.0,
+      "currency": "USD",
+      "normalized_collateral_id": "45c26a94-0d6a-4b2b-830e-8b458d82c121",
+      "eligible_collateral": [
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "US-CASH",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Base Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully processed cash collateral with high confidence. Cash USD identified as standardized type with no maturity constraints (non-applicable for cash instruments). Standard 100% valuation with 0% haircut applied, consistent with cash collateral treatment. Ambiguity resolution performed by Sonnet model achieved 0.92 confidence. All taxonomy and logic validations passed without corrections needed. Simple collateral structure with minimal complexity resulted in straightforward classification."
+        }
+      ],
+      "valuation_agent": "the party making the demand under Paragraph 3, unless there has occurred and is continuing any Event of Default, Potential Event of Default or Additional Termination Event with respect to such party, in which case the other party shall be the Valuation Agent.",
+      "effective_date": "2009-12-14T00:00:00",
+      "confidence_scores": {
+        "agreement_info.agreement_title": 1.0,
+        "agreement_info.agreement_date": 1.0,
+        "agreement_info.party_a": 1.0,
+        "agreement_info.party_b": 1.0,
+        "agreement_info.exhibit_number": 1.0,
+        "core_margin_terms.party_a_threshold": 1.0,
+        "core_margin_terms.party_b_threshold": 1.0,
+        "core_margin_terms.party_a_min_transfer_amount": 1.0,
+        "core_margin_terms.party_b_min_transfer_amount": 1.0,
+        "core_margin_terms.rounding": 1.0,
+        "core_margin_terms.base_currency": 1.0,
+        "core_margin_terms.party_a_independent_amount ": 1.0,
+        "core_margin_terms.party_b_independent_amount ": 1.0,
+        "valuation_timing.valuation_agent": 1.0,
+        "valuation_timing.valuation_time": 1.0,
+        "valuation_timing.notification_time": 1.0,
+        "operational_details.delivery_timing": 1.0,
+        "column_info.valuation_column_count": 1.0
+      },
+      "source_document_id": "45c26a94-0d6a-4b2b-830e-8b458d82c121",
+      "source_pages": {
+        "agreement_title": 0,
+        "agreement_date": 1,
+        "party_a": 1,
+        "party_b": 1,
+        "exhibit_number": 0,
+        "party_b_threshold": 2,
+        "party_a_min_transfer_amount": 2,
+        "party_b_min_transfer_amount": 2,
+        "rounding": 2,
+        "base_currency": 1,
+        "party_a_independent_amount ": 2,
+        "party_b_independent_amount ": 2,
+        "valuation_agent": 2,
+        "valuation_time": 2,
+        "notification_time": 2,
+        "valuation_column_count": 1
+      }
+    }
+  },
+  "errors": [],
+  "step_timings": {
+    "parse": 11.457319259643555,
+    "extract": 17.27234697341919,
+    "normalize": 40.07586121559143,
+    "map": 0.005583047866821289,
+    "total": 68.82280564308167
+  }
+}

@@ -1,0 +1,325 @@
+You are matching collateral descriptions and maturity ranges from a CSV import
+to the eligible collateral defined in a CSA agreement.
+
+CSA Eligible Collateral:
+
+1. "Cash: US Dollars in depository account form."
+   Standardized Type: StandardizedCollateralType.CASH_USD
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 0 to inf years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 0 to inf years -> Haircut: 0.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 0 to inf years -> Haircut: 0.0%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 0 to inf years -> Haircut: 20.0%
+
+2. "U.S. Treasury Securities: negotiable debt obligations issued by the U.S. Treasury Department ("Treasuries") having a remaining maturity of up to and not more than 1 year."
+   Standardized Type: StandardizedCollateralType.US_TREASURY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 0 to 1.0 years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 0 to 1.0 years -> Haircut: 0.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 0 to 1.0 years -> Haircut: 1.1%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 0 to 1.0 years -> Haircut: 20.9%
+
+3. "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years."
+   Standardized Type: StandardizedCollateralType.US_TREASURY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 1.0 to 10.0 years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 1.0 to 2.0 years -> Haircut: 1.0%
+      - Maturity: 2.0 to 3.0 years -> Haircut: 2.0%
+      - Maturity: 3.0 to 5.0 years -> Haircut: 3.0%
+      - Maturity: 5.0 to 7.0 years -> Haircut: 4.0%
+      - Maturity: 7.0 to 10.0 years -> Haircut: 6.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 1.0 to 5.0 years -> Haircut: 2.0%
+      - Maturity: 5.0 to 10.0 years -> Haircut: 7.4%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 1.0 to 5.0 years -> Haircut: 21.6%
+      - Maturity: 5.0 to 10.0 years -> Haircut: 25.9%
+
+4. "Treasuries having a remaining maturity of greater than 10 years"
+   Standardized Type: StandardizedCollateralType.US_TREASURY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 10.0 to inf years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 10.0 to 20.0 years -> Haircut: 10.0%
+      - Maturity: 20.0 to inf years -> Haircut: 12.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 10.0 to 20.0 years -> Haircut: 13.1%
+      - Maturity: 20.0 to inf years -> Haircut: 15.4%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 10.0 to 20.0 years -> Haircut: 30.5%
+      - Maturity: 20.0 to inf years -> Haircut: 36.0%
+
+5. "Agency Securities: negotiable debt obligations of the Federal National Mortgage Association (FNMA), Federal Home Loan Mortgage Corporation (FHLMC), Federal Home Loan Banks (FHLB), Federal Farm Credit Banks (FFCB), Student Loan Marketing Association (SLMA), Tennessee Valley Authority (TVA) (collectively, "Agency Securities") having a remaining maturity of not more than 1 year."
+   Standardized Type: StandardizedCollateralType.US_AGENCY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 0 to 1.0 years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 0 to 1.0 years -> Haircut: 1.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 0 to 1.0 years -> Haircut: 1.5%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 0 to 1.0 years -> Haircut: 21.6%
+
+6. "Agency Securities having a remaining maturity of greater than 1 year but not more than 5 years."
+   Standardized Type: StandardizedCollateralType.US_AGENCY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 1.0 to 5.0 years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 1.0 to 2.0 years -> Haircut: 2.0%
+      - Maturity: 2.0 to 3.0 years -> Haircut: 3.0%
+      - Maturity: 3.0 to 5.0 years -> Haircut: 4.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 1.0 to 5.0 years -> Haircut: 2.0%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 1.0 to 5.0 years -> Haircut: 21.6%
+
+7. "Agency Securities having a remaining maturity of greater than 5 years but not more than 10 years."
+   Standardized Type: StandardizedCollateralType.US_AGENCY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 5.0 to 10.0 years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 5.0 to 7.0 years -> Haircut: 6.0%
+      - Maturity: 7.0 to 10.0 years -> Haircut: 7.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 5.0 to 10.0 years -> Haircut: 7.4%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 5.0 to 10.0 years -> Haircut: 25.9%
+
+8. "Agency Securities having a remaining maturity of greater than 10 years but not more than 20 years."
+   Standardized Type: StandardizedCollateralType.US_AGENCY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 10.0 to 20.0 years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 10.0 to 20.0 years -> Haircut: 11.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 10.0 to 20.0 years -> Haircut: 18.4%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 10.0 to 20.0 years -> Haircut: 34.7%
+
+9. "Agency Securities having a remaining maturity of greater than 20 years but not more than 30 years."
+   Standardized Type: StandardizedCollateralType.US_AGENCY
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 20.0 to 30.0 years -> Haircut: 0.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 20.0 to 30.0 years -> Haircut: 13.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 20.0 to 30.0 years -> Haircut: 18.4%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 20.0 to 30.0 years -> Haircut: 34.7%
+
+10. "FHLMC Certificates. Mortgage participation certificates issued by FHLMC evidencing undivided interests or participations in pools of first lien conventional or FHA/VA residential mortgages or deeds of trust, guaranteed by FHLMC, and having a remaining maturity of not more than 30 years."
+   Standardized Type: StandardizedCollateralType.US_AGENCY_MBS
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 0 to 30.0 years -> Haircut: 18.1%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 0 to 30.0 years -> Haircut: 18.1%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 0 to 30.0 years -> Haircut: 13.6%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 0 to 30.0 years -> Haircut: 30.9%
+
+11. "FNMA Certificates. Mortgage-backed pass-through certificates issued by FNMA evidencing undivided interests in pools of first lien mortgages or deeds of trust on residential properties, guaranteed by FNMA, having a remaining maturity of not more than 30 years."
+   Standardized Type: StandardizedCollateralType.US_AGENCY_MBS
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 0 to 30.0 years -> Haircut: 18.1%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 0 to 30.0 years -> Haircut: 18.1%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 0 to 30.0 years -> Haircut: 13.6%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 0 to 30.0 years -> Haircut: 30.9%
+
+12. "GNMA Certificates. Mortgage-backed pass-through certificates issued by private entities, evidencing undivided interests in pools of first lien mortgages or deeds of trust on single family residences, guaranteed by the Government National Mortgage Association (GNMA) with the full faith and credit of the United States, and having a remaining maturity of not more than 30 years."
+   Standardized Type: StandardizedCollateralType.US_AGENCY_MBS
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 0 to 30.0 years -> Haircut: 18.1%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 0 to 30.0 years -> Haircut: 18.1%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 0 to 30.0 years -> Haircut: 13.6%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 0 to 30.0 years -> Haircut: 30.9%
+
+13. "Commercial Paper: Commercial Paper with a rating of at least P-1 by Moody's and at least A-1+ by S&P and having a remaining maturity of not more than 30 days."
+   Standardized Type: StandardizedCollateralType.COMMERCIAL_PAPER
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+      - Maturity: 0 to 0.082 years -> Haircut: 20.0%
+   
+   Moody's Second Trigger Event:
+      - Maturity: 0 to 0.082 years -> Haircut: 20.0%
+   
+   S&P Approved Ratings Downgrade:
+      - Maturity: 0 to 0.082 years -> Haircut: 1.0%
+   
+   S&P Required Ratings Downgrade:
+      - Maturity: 0 to 0.082 years -> Haircut: 20.8%
+
+14. "Other: Other items of Credit Support approved by each applicable rating agency with such valuation percentages as determined by each applicable rating agency."
+   Standardized Type: StandardizedCollateralType.UNKNOWN
+   Rating Events: Moody's First Trigger Event, Moody's Second Trigger Event, S&P Approved Ratings Downgrade, S&P Required Ratings Downgrade
+   
+   Moody's First Trigger Event:
+   
+   Moody's Second Trigger Event:
+   
+   S&P Approved Ratings Downgrade:
+   
+   S&P Required Ratings Downgrade:
+
+
+CSV Collateral to Match:
+
+Row 2:
+  Description: "Cash: US Dollars in depository account form"
+  Maturity Range: All maturities
+  Market Value: $500,000.00
+  Valuation Scenario: Moody's First Trigger Event
+
+Row 3:
+  Description: "U.S. Treasury Securities having a remaining maturity of up to and not more than 1 year"
+  Maturity Range: 0.0-1.0 years
+  Market Value: $1,000,000.00
+  Valuation Scenario: Moody's First Trigger Event
+
+Row 4:
+  Description: "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years"
+  Maturity Range: 3.0-5.0 years
+  Market Value: $3,500,000.00
+  Valuation Scenario: Moody's Second Trigger Event
+
+Row 5:
+  Description: "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years"
+  Maturity Range: 7.0-10.0 years
+  Market Value: $2,000,000.00
+  Valuation Scenario: S&P Approved Ratings Downgrade
+
+Row 6:
+  Description: "U.S. Treasury Securities having a remaining maturity of up to and not more than 1 year"
+  Maturity Range: 0.5-1.0 years
+  Market Value: $1,500,000.00
+  Valuation Scenario: Moody's First Trigger Event
+
+Row 7:
+  Description: "Treasuries having a remaining maturity of greater than 10 years but not more than 30 years"
+  Maturity Range: 10.0-15.0 years
+  Market Value: $1,800,000.00
+  Valuation Scenario: S&P Required Ratings Downgrade
+
+Row 8:
+  Description: "Cash: US Dollars in depository account form"
+  Maturity Range: All maturities
+  Market Value: $750,000.00
+  Valuation Scenario: Moody's First Trigger Event
+
+Row 9:
+  Description: "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years"
+  Maturity Range: 5.0-7.0 years
+  Market Value: $4,200,000.00
+  Valuation Scenario: Moody's Second Trigger Event
+
+Row 10:
+  Description: "U.S. Treasury Securities having a remaining maturity of up to and not more than 1 year"
+  Maturity Range: 0.0-1.0 years
+  Market Value: $800,000.00
+  Valuation Scenario: Moody's First Trigger Event
+
+Row 11:
+  Description: "Treasuries having a remaining maturity of greater than 10 years but not more than 30 years"
+  Maturity Range: 15.0-20.0 years
+  Market Value: $2,500,000.00
+  Valuation Scenario: S&P Approved Ratings Downgrade
+
+
+For each CSV row, match it to the best-fitting CSA collateral description and maturity bucket.
+Consider BOTH the collateral description AND the maturity range when matching.
+
+For each CSV row, return a JSON object with:
+- csv_row: The row number
+- matched_csa_description: The exact CSA collateral description (or null if no match)
+- matched_standardized_type: The standardized type (or null)
+- matched_maturity_bucket_min: Minimum years of matched bucket (or null)
+- matched_maturity_bucket_max: Maximum years of matched bucket (or null)
+- confidence: Match confidence from 0.0 to 1.0
+- reasoning: Brief explanation of why this match was chosen (1-2 sentences)
+
+If a CSV item spans multiple maturity buckets or doesn't fit any bucket precisely, choose the
+most conservative (highest haircut) bucket and note this in the reasoning.
+
+If no good match exists (confidence < 0.5), set matched_csa_description to null and explain
+why in the reasoning.
+
+Return ONLY a JSON array with one object per CSV row, in order:
+[
+  {"csv_row": 1, "matched_csa_description": "...", ...},
+  {"csv_row": 2, "matched_csa_description": "...", ...},
+  ...
+]

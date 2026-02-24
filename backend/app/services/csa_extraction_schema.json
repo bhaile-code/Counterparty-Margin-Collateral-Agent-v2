@@ -1,0 +1,325 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ISDA Credit Support Annex Field Extraction Schema",
+  "description": "Schema for extracting key tables and form-like fields from a Credit Support Annex to the ISDA Master Agreement in markdown format.",
+  "type": "object",
+  "properties": {
+    "agreement_info": {
+      "title": "Agreement Information",
+      "description": "Core identifying information about the agreement and parties.",
+      "type": "object",
+      "properties": {
+        "agreement_title": {
+          "title": "Agreement Title",
+          "description": "The full title of the agreement document.",
+          "type": "string"
+        },
+        "agreement_date": {
+          "title": "Agreement Date",
+          "description": "The effective date of the agreement.",
+          "type": "string"
+        },
+        "party_a": {
+          "title": "Party A Name",
+          "description": "The full legal name of Party A.",
+          "type": "string"
+        },
+        "party_b": {
+          "title": "Party B Name",
+          "description": "The full legal name of Party B.",
+          "type": "string"
+        },
+        "exhibit_number": {
+          "title": "Exhibit Number",
+          "description": "The exhibit or annex number of the document.",
+          "type": "string"
+        }
+      },
+      "required": [
+        "agreement_title",
+        "agreement_date",
+        "party_a",
+        "party_b",
+        "exhibit_number"
+      ]
+    },
+      "eligible_collateral_table": {
+        "title": "Eligible Collateral Table",
+        "description": "Table listing types of eligible collateral and their valuation percentages under various rating events.",
+        "type": "array",
+        "items": {
+          "title": "Eligible Collateral Row",
+          "description": "A row from the eligible collateral table.",
+          "type": "object",
+          "properties": {
+            "eligible_collateral_row": {
+              "type": "object",
+              "properties": {
+                "collateral_type": {
+                  "type": "string",
+                  "description": "Type or description of the eligible collateral."
+                },
+                "valuation_percentages": {
+                  "type": "array",
+                  "description": "Valuation percentage for each rating event which should be ",
+                  "items": {
+                    "type": "string"
+                  }
+                }
+              },
+              "additionalProperties": false,
+              "required": [
+                "collateral_type",
+                "valuation_percentages"
+              ],
+              "description": "A row from the eligible collateral table."
+            }
+        },
+        "required": [
+          "eligible_collateral_row"
+        ]
+      }
+    },
+    "signature_blocks": {
+      "title": "Signature Blocks",
+      "description": "List of signature blocks with signer details.",
+      "type": "array",
+      "items": {
+        "title": "Signature Block",
+        "description": "A block containing signature and signer information.",
+        "type": "object",
+        "properties": {
+          "signer_name": {
+            "title": "Signer Name",
+            "description": "Name of the individual who signed.",
+            "type": "string"
+          },
+          "signer_title": {
+            "title": "Signer Title",
+            "description": "Title or role of the signer.",
+            "type": "string"
+          },
+          "signer_entity": {
+            "title": "Signer Entity",
+            "description": "Entity or organization represented by the signer.",
+            "type": "string"
+          },
+          "signature_date": {
+            "title": "Signature Date",
+            "description": "Date the document was signed.",
+            "type": "string"
+          },
+          "signature_type": {
+            "title": "Signature Type",
+            "description": "Type of signature (e.g., electronic, digital, handwritten).",
+            "type": "string"
+          }
+        },
+        "required": [
+          "signer_name",
+          "signer_title",
+          "signer_entity",
+          "signature_date",
+          "signature_type"
+        ]
+      }
+    },
+    "core_margin_terms": {
+      "title": "Key Thresholds and Amounts",
+      "description": "Key threshold and amount values for Party A and Party B.",
+      "type": "object",
+      "properties": {
+        "party_a_threshold": {
+          "title": "Party A Threshold",
+          "description": "Threshold value for Party A.",
+          "type": "string"
+        },
+        "party_b_threshold": {
+          "title": "Party B Threshold",
+          "description": "Threshold value for Party B.",
+          "type": "string"
+        },
+        "party_a_min_transfer_amount": {
+          "title": "Party A Minimum Transfer Amount",
+          "description": "Minimum transfer amount for Party A.",
+          "type": "string"
+        },
+        "party_b_min_transfer_amount": {
+          "title": "Party B Minimum Transfer Amount",
+          "description": "Minimum transfer amount for Party B.",
+          "type": "string"
+        },
+        "rounding": {
+          "title": "Rounding Rule",
+          "description": "Rounding rules for Delivery and Return Amounts.",
+          "type": "string"
+        },
+        "base_currency": {
+          "type": "string",
+          "description": "Base currency for the agreement. (e.g. USD, EUR, GBP, US Dollar etc.)"
+        },
+        "party_a_independent_amount": {
+          "type": "string",
+          "description": "Independent Amount for Party A which is fixed collateral amount required regardless of exposure."
+        },
+        "party_b_independent_amount": {
+          "type": "string",
+          "description": "Independent Amount for Party B which is fixed collateral amount required regardless of exposure."
+        }
+      },
+      "required": [
+        "party_a_threshold",
+        "party_b_threshold",
+        "party_a_min_transfer_amount",
+        "party_b_min_transfer_amount",
+        "rounding",
+        "base_currency",
+        "party_a_independent_amount",
+        "party_b_independent_amount"
+      ]
+    },
+    "valuation_timing": {
+      "type": "object",
+      "properties": {
+        "valuation_agent": {
+          "type": "string",
+          "description": "The party responsible for calculating the mark-to-market exposure and determining margin requirements. Determines whose valuations are binding for collateral calculations."
+        },
+        "valuation_time": {
+          "type": "string",
+          "description": "The specific cadence (time and date that may include timezone) when positions are marked-to-market for collateral calculations."
+        },
+        "notification_time": {
+          "type": "string",
+          "description": "The deadline by which a margin call must be communicated to the counterparty."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "valuation_agent",
+        "valuation_time",
+        "notification_time"
+      ],
+      "description": "Specifics on conducting valuation calculations, operations, and responsibilities"
+    },
+    "operational_details": {
+      "type": "object",
+      "properties": {
+        "delivery_timing": {
+          "type": "string",
+          "description": "The time period within which collateral must be delivered after a margin call is made. "
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "delivery_timing"
+      ]
+    },
+    "column_info": {
+      "type": "object",
+      "description": "Information of specific column types within the Eligible Collateral Table.",
+      "properties": {
+        "valuation_column_count": {
+          "type": "number",
+          "description": "Number of columns within the table that store valuation percentages"
+        },
+        "valuation_column_names": {
+          "type": "array",
+          "description": "Name of columns within the table that store valuation percentages",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "valuation_column_count",
+        "valuation_column_names"
+      ]
+    },
+    "clauses_to_collect": {
+      "title": "Extracted Clause Text",
+      "description": "Verbatim text of key calculation clauses and definitions from the CSA document.",
+      "type": "object",
+      "properties": {
+        "credit_support_amount_definition": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "All excerpts defining how the Credit Support Amount is calculated or varies under rating scenarios (Moody's, S&P, etc.)."
+        },
+        "delivery_amount_clause": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Sentences or paragraphs describing Delivery Amount or margin call calculation (e.g., 'greatest of' Moody's and S&P requirements)."
+        },
+        "return_amount_clause": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Sentences defining when and how collateral should be returned (often 'least of' Moody's and S&P excess values)."
+        },
+        "threshold_definition": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Definitions of Threshold amounts for each party and any provisions or rating-dependent variations."
+        },
+        "independent_amount_clause": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Clauses defining Independent Amount requirements, if any."
+        },
+        "trigger_event_definitions": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Definitions of trigger events (e.g., rating downgrades, first/second triggers)."
+        },
+        "valuation_timing_clause": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Clauses defining valuation dates, times, and notification requirements."
+        },
+        "dispute_resolution_clause": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          },
+          "description": "Procedures for resolving valuation disputes."
+        }
+      },
+      "additionalProperties": false,
+      "required": [
+        "credit_support_amount_definition",
+        "delivery_amount_clause",
+        "return_amount_clause",
+        "threshold_definition",
+        "independent_amount_clause",
+        "trigger_event_definitions",
+        "valuation_timing_clause",
+        "dispute_resolution_clause"
+      ]
+    }
+  },
+  "required": [
+    "agreement_info",
+    "eligible_collateral_table",
+    "signature_blocks",
+    "core_margin_terms",
+    "valuation_timing",
+    "operational_details",
+    "column_info",
+    "clauses_to_collect"
+  ]
+}

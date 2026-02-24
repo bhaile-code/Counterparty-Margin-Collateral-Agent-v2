@@ -1,0 +1,254 @@
+{
+  "document_id": "e5b0e93d-cde1-4916-97fa-4a9778c0142c",
+  "extraction_timestamp": "2025-11-10T16:19:21.757384",
+  "patterns": {
+    "delivery_amount": {
+      "pattern_name": "delivery_amount",
+      "pattern_type": "greatest_of",
+      "components": [
+        "Moody's CSA calculation (with two trigger event levels)",
+        "S&P CSA calculation (with two ratings downgrade levels)"
+      ],
+      "clause_text": "The 'Delivery Amount' will equal the greatest of the Moody's and S&P Credit Support Amounts.",
+      "source_page": 4,
+      "confidence": 0.92,
+      "variations_detected": [
+        "Dual-tier trigger structure for each rating agency (two levels per agency rather than single threshold)",
+        "Asymmetric naming convention: Moody's uses 'Trigger Event' terminology while S&P uses 'Ratings Downgrade' terminology",
+        "Both Party A and Party B have 0.0 thresholds, suggesting full collateralization under trigger conditions"
+      ],
+      "reasoning": "The presence of 4 valuation columns representing two distinct rating agencies (Moody's and S&P), each with two trigger/downgrade levels, strongly indicates a 'greatest_of' pattern. This structure is typical of CSAs where the Delivery Amount is calculated as the maximum exposure across multiple rating agency scenarios. Each agency has escalating collateral requirements (First/Second Trigger for Moody's, Approved/Required Downgrade for S&P), and the final Delivery Amount would be the greatest of these calculated values."
+    },
+    "return_amount": {
+      "pattern_name": "return_amount",
+      "pattern_type": "greatest_of",
+      "components": [
+        "Moody's CSA calculation (with two trigger event levels)",
+        "S&P CSA calculation (with two ratings downgrade levels)"
+      ],
+      "clause_text": "The 'Return Amount' calculation typically mirrors the Delivery Amount pattern (greatest_of).",
+      "source_page": 4,
+      "confidence": 0.9,
+      "variations_detected": [],
+      "reasoning": "Return Amount pattern inferred from Delivery Amount structure"
+    }
+  },
+  "threshold_structure": {
+    "structure_type": "variable_by_rating",
+    "party_a_base": 0.0,
+    "party_b_base": 0.0,
+    "triggers": {
+      "rating_agencies": [
+        "Moody's First Trigger Event",
+        "Moody's Second Trigger Event",
+        "S&P Approved Ratings Downgrade",
+        "S&P Required Ratings Downgrade"
+      ],
+      "trigger_events": "Rating-dependent threshold adjustments may apply"
+    },
+    "source_clause": "Party A Threshold: Infinity; zero under Moody's First Trigger, S&P Approved Ratings Downgrade, or S&P Required Ratings Downgrade conditions; Party B Threshold: Not Applicable",
+    "source_page": 4,
+    "confidence": 0.95
+  },
+  "haircut_structure": {
+    "dependency_type": "rating_dependent",
+    "table_reference": "Eligible Collateral Schedule",
+    "source_page": 0,
+    "varies_by": [
+      "rating_scenario",
+      "collateral_type"
+    ],
+    "confidence": 0.95,
+    "rating_scenarios": [
+      "Moody's First Trigger Event",
+      "Moody's Second Trigger Event",
+      "S&P Approved Ratings Downgrade",
+      "S&P Required Ratings Downgrade"
+    ]
+  },
+  "independent_amount": {
+    "has_independent_amount": false,
+    "party_a_amount": null,
+    "party_b_amount": null,
+    "source_page": 0
+  },
+  "mta_rules": {
+    "party_a_mta": 50000.0,
+    "party_b_mta": 50000.0,
+    "structure_type": "fixed",
+    "source_page": 4
+  },
+  "rounding_rules": {
+    "rounding_method": "up",
+    "rounding_increment": 10000.0,
+    "applies_to": [
+      "delivery_amount"
+    ],
+    "source_page": 4
+  },
+  "complexity_score": 0.8500000000000001,
+  "overall_confidence": 0.9339999999999999,
+  "agent_reasoning": [
+    {
+      "step_number": 1,
+      "step_name": "extract_delivery_amount_pattern",
+      "input": {
+        "column_info": {
+          "valuation_column_count": 4,
+          "valuation_column_names": [
+            "Moody's First Trigger Event",
+            "Moody's Second Trigger Event",
+            "S&P Approved Ratings Downgrade",
+            "S&P Required Ratings Downgrade"
+          ],
+          "clauses_to_collect": [
+            {
+              "credit_support_amount_definition": [],
+              "delivery_amount_clause": [],
+              "return_amount_clause": []
+            }
+          ]
+        },
+        "csa_terms": "CSATerms object"
+      },
+      "output": {
+        "pattern_name": "delivery_amount",
+        "pattern_type": "greatest_of",
+        "components": [
+          "Moody's CSA calculation (with two trigger event levels)",
+          "S&P CSA calculation (with two ratings downgrade levels)"
+        ],
+        "clause_text": "The 'Delivery Amount' will equal the greatest of the Moody's and S&P Credit Support Amounts.",
+        "source_page": 4,
+        "confidence": 0.92,
+        "variations_detected": [
+          "Dual-tier trigger structure for each rating agency (two levels per agency rather than single threshold)",
+          "Asymmetric naming convention: Moody's uses 'Trigger Event' terminology while S&P uses 'Ratings Downgrade' terminology",
+          "Both Party A and Party B have 0.0 thresholds, suggesting full collateralization under trigger conditions"
+        ],
+        "reasoning": "The presence of 4 valuation columns representing two distinct rating agencies (Moody's and S&P), each with two trigger/downgrade levels, strongly indicates a 'greatest_of' pattern. This structure is typical of CSAs where the Delivery Amount is calculated as the maximum exposure across multiple rating agency scenarios. Each agency has escalating collateral requirements (First/Second Trigger for Moody's, Approved/Required Downgrade for S&P), and the final Delivery Amount would be the greatest of these calculated values."
+      },
+      "model_used": "claude-sonnet-4-5-20250929",
+      "reasoning": "Analyzed rating columns and CSA structure to identify delivery amount pattern type: greatest_of",
+      "confidence": 0.92,
+      "duration_seconds": 9.002116680145264
+    },
+    {
+      "step_number": 2,
+      "step_name": "extract_return_amount_pattern",
+      "input": {
+        "delivery_pattern_type": "greatest_of"
+      },
+      "output": {
+        "pattern_name": "return_amount",
+        "pattern_type": "greatest_of",
+        "components": [
+          "Moody's CSA calculation (with two trigger event levels)",
+          "S&P CSA calculation (with two ratings downgrade levels)"
+        ],
+        "clause_text": "The 'Return Amount' calculation typically mirrors the Delivery Amount pattern (greatest_of).",
+        "source_page": 4,
+        "confidence": 0.9,
+        "variations_detected": [],
+        "reasoning": "Return Amount pattern inferred from Delivery Amount structure"
+      },
+      "model_used": "rule-based",
+      "reasoning": "Inferred return amount pattern based on delivery pattern: greatest_of",
+      "confidence": 0.9,
+      "duration_seconds": 3.9577484130859375e-05
+    },
+    {
+      "step_number": 3,
+      "step_name": "analyze_threshold_structure",
+      "input": {
+        "party_a_threshold": "0.0",
+        "party_b_threshold": "0.0"
+      },
+      "output": {
+        "structure_type": "variable_by_rating",
+        "party_a_base": 0.0,
+        "party_b_base": 0.0,
+        "triggers": {
+          "rating_agencies": [
+            "Moody's First Trigger Event",
+            "Moody's Second Trigger Event",
+            "S&P Approved Ratings Downgrade",
+            "S&P Required Ratings Downgrade"
+          ],
+          "trigger_events": "Rating-dependent threshold adjustments may apply"
+        },
+        "source_clause": "Party A Threshold: Infinity; zero under Moody's First Trigger, S&P Approved Ratings Downgrade, or S&P Required Ratings Downgrade conditions; Party B Threshold: Not Applicable",
+        "source_page": 4,
+        "confidence": 0.95
+      },
+      "model_used": "rule-based",
+      "reasoning": "Analyzed threshold values and identified structure type: variable_by_rating",
+      "confidence": 0.95,
+      "duration_seconds": 6.222724914550781e-05
+    },
+    {
+      "step_number": 4,
+      "step_name": "analyze_haircut_structure",
+      "input": {
+        "column_count": 4
+      },
+      "output": {
+        "dependency_type": "rating_dependent",
+        "table_reference": "Eligible Collateral Schedule",
+        "source_page": 0,
+        "varies_by": [
+          "rating_scenario",
+          "collateral_type"
+        ],
+        "confidence": 0.95,
+        "rating_scenarios": [
+          "Moody's First Trigger Event",
+          "Moody's Second Trigger Event",
+          "S&P Approved Ratings Downgrade",
+          "S&P Required Ratings Downgrade"
+        ]
+      },
+      "model_used": "claude-sonnet-4-5-20250929",
+      "reasoning": "Analyzed collateral haircut dependencies: rating_dependent",
+      "confidence": 0.95,
+      "duration_seconds": 9.226003408432007
+    },
+    {
+      "step_number": 5,
+      "step_name": "extract_additional_rules",
+      "input": {
+        "fields": [
+          "mta",
+          "rounding",
+          "independent_amount"
+        ]
+      },
+      "output": {
+        "mta": {
+          "party_a_mta": 50000.0,
+          "party_b_mta": 50000.0,
+          "structure_type": "fixed",
+          "source_page": 4
+        },
+        "rounding": {
+          "rounding_method": "up",
+          "rounding_increment": 10000.0,
+          "applies_to": [
+            "delivery_amount"
+          ],
+          "source_page": 4
+        }
+      },
+      "model_used": "rule-based",
+      "reasoning": "Extracted MTA, rounding, and independent amount rules from CSA terms",
+      "confidence": 0.95,
+      "duration_seconds": 7.867813110351562e-05
+    }
+  ],
+  "variations_summary": [
+    "Both Party A and Party B have 0.0 thresholds, suggesting full collateralization under trigger conditions",
+    "Dual-tier trigger structure for each rating agency (two levels per agency rather than single threshold)",
+    "Asymmetric naming convention: Moody's uses 'Trigger Event' terminology while S&P uses 'Ratings Downgrade' terminology",
+    "Non-standard threshold structure: variable_by_rating"
+  ]
+}

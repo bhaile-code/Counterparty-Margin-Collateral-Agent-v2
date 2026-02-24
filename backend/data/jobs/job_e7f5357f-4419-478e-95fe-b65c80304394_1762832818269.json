@@ -1,0 +1,1156 @@
+{
+  "job_id": "job_e7f5357f-4419-478e-95fe-b65c80304394_1762832818269",
+  "document_id": "e7f5357f-4419-478e-95fe-b65c80304394",
+  "status": "completed",
+  "current_step": "done",
+  "progress": 100,
+  "created_at": "2025-11-10T20:46:58.269667",
+  "updated_at": "2025-11-10T20:51:46.470613",
+  "started_at": "2025-11-10T20:46:59.681909",
+  "completed_at": "2025-11-10T20:51:46.470607",
+  "options": {
+    "normalize_method": "multi-agent",
+    "save_intermediate_steps": false,
+    "calculate_margin": false,
+    "portfolio_value": null
+  },
+  "results": {
+    "parse_id": "parse_e7f5357f-4419-478e-95fe-b65c80304394_20251110_204659",
+    "extraction_id": "extract_parse_e7f5357f-4419-478e-95fe-b65c80304394_20251110_204659_20251110_204749",
+    "normalized_collateral_id": "e7f5357f-4419-478e-95fe-b65c80304394",
+    "normalization_metadata": {
+      "overall_confidence": 0.9246045454545455,
+      "requires_human_review": false,
+      "agents_used": [
+        "collateral",
+        "temporal",
+        "currency"
+      ],
+      "total_processing_time": 164.52135396003723
+    },
+    "csa_terms_id": "e7f5357f-4419-478e-95fe-b65c80304394",
+    "csa_terms": {
+      "party_a": "CREDIT SUISSE INTERNATIONAL",
+      "party_b": "FIFTH THIRD AUTO TRUST 2008-1",
+      "party_a_threshold": Infinity,
+      "party_b_threshold": 0.0,
+      "party_a_minimum_transfer_amount": 50000.0,
+      "party_b_minimum_transfer_amount": 50000.0,
+      "party_a_independent_amount": 0.0,
+      "party_b_independent_amount": 0.0,
+      "rounding": 10000.0,
+      "currency": "USD",
+      "normalized_collateral_id": "e7f5357f-4419-478e-95fe-b65c80304394",
+      "eligible_collateral": [
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash: US Dollars in depository account form.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully processed CASH_USD collateral type with high confidence. The collateral was identified as cash in USD, which requires no maturity bucketing. Initial parsing by Haiku model (25 iterations) established the base structure. Ambiguity detection phase (25 iterations) identified no significant issues with this straightforward collateral type. Multiple resolution passes by Sonnet model (8 iterations, avg confidence 0.915) confirmed the classification and validated that cash collateral appropriately has 100% valuation, 0% haircut, and no maturity constraints. Rule-based validation (5 passes) confirmed taxonomy compliance and logical consistency. The high number of processing iterations reflects thorough validation rather than complexity or uncertainty in the underlying data. Final confidence slightly reduced from individual step confidences due to the volume of validation cycles, but the output is robust and production-ready."
+        },
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash: US Dollars in depository account form.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully processed CASH_USD collateral type with high confidence. The collateral was identified as cash in USD, which inherently has no maturity structure. Initial parsing by Haiku model (25 iterations) correctly identified the standardized type. Ambiguity detection phase (25 iterations) found no significant ambiguities, as cash collateral is straightforward. Multiple resolution passes by Sonnet model (9 iterations with confidence scores ranging from 0.8625 to 0.9766) validated the interpretation. All taxonomy and logic validations passed successfully. The 100% valuation with 0% haircut is standard for cash collateral. Final confidence slightly reduced from individual high scores (0.92 vs max 0.9766) due to the extensive processing chain length, though all validations confirmed correctness. No maturity buckets apply as cash has no time-based characteristics."
+        },
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash: US Dollars in depository account form.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.95,
+          "notes": "Successfully processed CASH_USD collateral type with high confidence. The collateral represents cash in USD with no maturity constraints, valued at 100% with zero haircut. Processing involved 25 initial parse attempts, 25 ambiguity detection steps, and 13 ambiguity resolution cycles with an average resolution confidence of 0.915. All taxonomy and logic validations passed successfully. The straightforward nature of cash collateral (no maturity buckets, standard valuation) contributed to high confidence despite multiple processing iterations. Key decisions: (1) Confirmed CASH_USD as standardized type, (2) Set maturity fields to null as cash has no maturity, (3) Applied 100% valuation with 0% haircut as standard for cash collateral, (4) Single maturity bucket with no date constraints. No conflicts or edge cases detected during validation."
+        },
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash: US Dollars in depository account form.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 0.8,
+              "haircut": 0.2,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed CASH_USD collateral with 80% valuation (20% haircut). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 11 ambiguity resolution cycles with high confidence (avg 0.91). All taxonomy and logic validations passed. No maturity buckets required for cash collateral. The extensive processing chain with multiple resolution iterations and consistent high confidence scores (ranging 0.82-0.98) indicates thorough validation, though the high number of iterations suggests some initial complexity or edge cases that required careful resolution. Final output is clean and validated."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "U.S. Treasury Securities: negotiable debt obligations issued by the U.S. Treasury Department (\"Treasuries\") having a remaining maturity of up to and not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.89,
+          "notes": "Successfully parsed US Treasury collateral with 1-year maximum maturity constraint. High confidence in collateral type identification (US_TREASURY) and maturity extraction (\u22641 year). The parsing involved 25 initial parse attempts, 25 ambiguity detection passes, 1 ambiguity resolution, and passed both taxonomy and logic validation. Default valuation of 100% applied with 0% haircut as no explicit valuation rules were provided in source. Min maturity appropriately set to null indicating no lower bound. Final confidence reduced from initial synthesis (0.88) to 0.89 due to extensive processing iterations suggesting complex or ambiguous source material, though final resolution and validation were successful."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "U.S. Treasury Securities: negotiable debt obligations issued by the U.S. Treasury Department (\"Treasuries\") having a remaining maturity of up to and not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 1-year maximum maturity constraint. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 10 ambiguity resolution cycles with Sonnet model (avg confidence: 0.92). Key decisions: (1) Standardized collateral type to US_TREASURY taxonomy, (2) Extracted maximum maturity of 1.0 years from source text with no minimum specified, (3) Applied 100% valuation with 0% haircut as standard for short-term US Treasuries, (4) Set min_maturity_years to null indicating no lower bound restriction. All validations passed (taxonomy and logic checks). High iteration count suggests complex source document or multiple collateral types processed, but final output is internally consistent and well-structured. Confidence reduced from individual resolution scores (0.86-0.98 range) due to processing complexity and null minimum maturity value requiring interpretation."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "U.S. Treasury Securities: negotiable debt obligations issued by the U.S. Treasury Department (\"Treasuries\") having a remaining maturity of up to and not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 0.9890000000000001,
+              "haircut": 0.011000000000000001,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 1-year maximum maturity constraint and 98.9% valuation (1.1% haircut). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 12 ambiguity resolution cycles with Sonnet model (avg confidence: 0.915). All taxonomy and logic validations passed. Key decisions: (1) Standardized collateral type to US_TREASURY, (2) Interpreted 'up to and not more than 1 year' as max_maturity of 1.0 years with no minimum specified, (3) Applied single maturity bucket covering 0-1 year range with consistent haircut. High iteration count suggests complex source document or multiple validation refinements, but final output is internally consistent and well-structured. Confidence reduced from individual step averages due to extensive processing cycles indicating initial parsing challenges."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "U.S. Treasury Securities: negotiable debt obligations issued by the U.S. Treasury Department (\"Treasuries\") having a remaining maturity of up to and not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 0.7909999999999999,
+              "haircut": 0.209,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 1-year maximum maturity constraint and 20.9% haircut. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 15 ambiguity resolution cycles with Sonnet model (avg confidence: 0.916). Key decisions: (1) Standardized collateral type to US_TREASURY taxonomy, (2) Extracted maturity constraint of \u22641 year from source text, (3) Applied 20.9% haircut (79.1% valuation) to the maturity bucket, (4) Set min_maturity to null indicating no lower bound specified. All taxonomy and logic validations passed. Confidence reduced from peak 0.9766 due to high number of processing iterations suggesting initial parsing complexity, but final output is internally consistent and well-validated."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 10.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 1-10 year maturity constraint. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 7 ambiguity resolution cycles with Sonnet model (avg confidence: 0.915). Data passed taxonomy and logic validation. High iteration count suggests complex source document or multiple collateral types processed. Final output shows clean structure: single maturity bucket (1-10 years) with 100% valuation and 0% haircut. Confidence reduced from individual resolution scores (0.86-0.98 range) due to extensive processing iterations required, but core data quality remains high with consistent validation passes."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 2.0,
+              "valuation_percentage": 0.99,
+              "haircut": 0.01,
+              "original_text": null
+            },
+            {
+              "min_years": 2.0,
+              "max_years": 3.0,
+              "valuation_percentage": 0.98,
+              "haircut": 0.02,
+              "original_text": null
+            },
+            {
+              "min_years": 3.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.97,
+              "haircut": 0.03,
+              "original_text": null
+            },
+            {
+              "min_years": 5.0,
+              "max_years": 7.0,
+              "valuation_percentage": 0.96,
+              "haircut": 0.04,
+              "original_text": null
+            },
+            {
+              "min_years": 7.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.94,
+              "haircut": 0.06,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.93,
+          "notes": "Successfully parsed US Treasury collateral with 1-10 year maturity range and 5 maturity buckets. Processing involved 25 initial parse attempts, extensive ambiguity detection (25 iterations), and 19 ambiguity resolution cycles with Sonnet model achieving consistently high confidence (0.82-0.98 range). Multiple synthesis iterations (11 total) refined the output. All taxonomy and logic validations passed. The maturity buckets show progressive haircut increases from 1% (1-2yr) to 6% (7-10yr), reflecting standard duration risk pricing. High processing volume indicates complex source data requiring significant disambiguation, but final output structure is clean and internally consistent with no gaps or overlaps in maturity ranges."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.9804,
+              "haircut": 0.0196,
+              "original_text": null
+            },
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.9259000000000001,
+              "haircut": 0.0741,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 1-10 year maturity range and two valuation buckets (1-5y at 98.04%, 5-10y at 92.59%). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 14 ambiguity resolution cycles with Sonnet model (avg confidence: 0.915). All taxonomy and logic validations passed. High iteration count suggests complex source data or edge cases, but final output is internally consistent with clear maturity boundaries and complementary haircut calculations. Confidence reduced from individual resolution scores due to extensive processing required, indicating potential complexity or ambiguity in source material."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.7843000000000001,
+              "haircut": 0.2157,
+              "original_text": null
+            },
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.7406999999999999,
+              "haircut": 0.2593,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 1-10 year maturity range and two distinct valuation buckets. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 6 ambiguity resolution cycles with Sonnet model (avg confidence: 0.913). All taxonomy and logic validations passed. Key decisions: (1) Standardized collateral type to US_TREASURY, (2) Extracted maturity constraints from source text, (3) Established two non-overlapping maturity buckets at 1-5y and 5-10y ranges, (4) Calculated complementary haircut percentages (21.57% and 25.93%) from valuation percentages. High iteration count suggests complex source document, but consistent validation passes and strong ambiguity resolution confidence (0.875-0.977) support final output reliability. Minor confidence reduction due to extensive processing cycles required."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 10 years",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with maturity constraint >10 years. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 3 ambiguity resolution cycles with high confidence (0.945-0.977). The collateral type is straightforward with a single maturity bucket (>10 years) and no haircut applied (100% valuation). All taxonomy and logic validations passed. The multiple processing iterations suggest initial complexity or edge cases that were successfully resolved. Final confidence slightly reduced from peak resolution confidence (0.977) due to the extensive iteration count, but the consistent validation passes and clear final structure support high reliability of the output."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 10 years",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": 20.0,
+              "valuation_percentage": 0.9,
+              "haircut": 0.1,
+              "original_text": null
+            },
+            {
+              "min_years": 20.0,
+              "max_years": null,
+              "valuation_percentage": 0.88,
+              "haircut": 0.12,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Treasury collateral with maturity-based haircut structure. Processing involved 25 initial parse attempts, extensive ambiguity detection (24 iterations), and 19 ambiguity resolution cycles with high individual confidence scores (ranging 0.82-0.98). The data shows a clear two-tier maturity structure: 10-20 years (10% haircut) and 20+ years (12% haircut). All taxonomy and logic validations passed. The high number of processing iterations suggests complex source material, but consistent resolution confidence scores and successful validation indicate reliable extraction. Final confidence reflects strong individual step performance tempered by the extensive processing required to achieve consensus."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 10 years",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": 20.0,
+              "valuation_percentage": 0.8690000000000001,
+              "haircut": 0.131,
+              "original_text": null
+            },
+            {
+              "min_years": 20.0,
+              "max_years": null,
+              "valuation_percentage": 0.846,
+              "haircut": 0.154,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Treasury collateral with maturity >10 years split into two buckets (10-20y and 20y+). Processing involved 25 initial parse attempts, extensive ambiguity detection (25 iterations), and 19 ambiguity resolution cycles with high individual confidence scores (avg ~0.92). Multiple validation passes confirmed taxonomy compliance and logical consistency. The maturity bucket structure is well-defined with clear haircut differentials (13.1% for 10-20y, 15.4% for 20y+). Key decisions: (1) Confirmed two-tier maturity structure above 10 years, (2) Validated haircut increases with longer maturity, (3) Established open-ended upper bucket (20y+). Minor confidence reduction due to extensive iteration count suggesting initial parsing complexity, but final synthesis achieved strong convergence (0.88-0.92 range across final steps)."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Treasuries having a remaining maturity of greater than 10 years",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": 20.0,
+              "valuation_percentage": 0.6951999999999999,
+              "haircut": 0.3048,
+              "original_text": null
+            },
+            {
+              "min_years": 20.0,
+              "max_years": null,
+              "valuation_percentage": 0.64,
+              "haircut": 0.36,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Treasury collateral with maturity >10 years, split into two buckets (10-20y and 20y+). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 23 ambiguity resolution cycles with high confidence (avg 0.92). Multiple synthesis iterations (5 attempts) were needed to finalize the structure. All taxonomy and logic validations passed. Key decisions: (1) Standardized type as US_TREASURY, (2) Interpreted 'greater than 10 years' as min_years=10.0 with no upper bound at type level, (3) Created two distinct maturity buckets with different haircuts (30.48% for 10-20y, 36.0% for 20y+), (4) Validated that valuation percentages are complementary to haircuts. The high number of processing steps suggests complex source data, but consistent high confidence scores (0.82-0.98 range) across resolution steps indicate reliable extraction. Final confidence reduced slightly due to extensive iteration requirements."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities: negotiable debt obligations of the Federal National Mortgage Association (FNMA), Federal Home Loan Mortgage Corporation (FHLMC), Federal Home Loan Banks (FHLB), Federal Farm Credit Banks (FFCB), Student Loan Marketing Association (SLMA), Tennessee Valley Authority (TVA) (collectively, \"Agency Securities\") having a remaining maturity of not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency collateral with 1-year maximum maturity constraint. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 5 ambiguity resolution cycles with high confidence (0.875-0.977). The collateral type was clearly identified as US_AGENCY with an explicit maturity restriction of \u22641 year. No haircut applied (100% valuation). All taxonomy and logic validations passed. The multiple processing iterations indicate thorough validation of the maturity constraint interpretation and collateral type classification. Final confidence reflects strong consensus across resolution steps with minor uncertainty due to null min_maturity value, which is appropriate given no lower bound was specified in source text."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities: negotiable debt obligations of the Federal National Mortgage Association (FNMA), Federal Home Loan Mortgage Corporation (FHLMC), Federal Home Loan Banks (FHLB), Federal Farm Credit Banks (FFCB), Student Loan Marketing Association (SLMA), Tennessee Valley Authority (TVA) (collectively, \"Agency Securities\") having a remaining maturity of not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 0.99,
+              "haircut": 0.01,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency collateral with 1-year maturity constraint and 99% valuation. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 18 ambiguity resolution cycles with Sonnet model (avg confidence: 0.92). Key decisions: (1) Standardized collateral type to US_AGENCY taxonomy, (2) Extracted maturity constraint of \u22641 year from source text, (3) Applied 1% haircut (99% valuation) consistently across the single maturity bucket, (4) Set min_maturity to null indicating no lower bound. All validation checks (taxonomy and logic) passed. High number of processing iterations suggests complex source document or multiple validation refinements, but final output is internally consistent and well-structured."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities: negotiable debt obligations of the Federal National Mortgage Association (FNMA), Federal Home Loan Mortgage Corporation (FHLMC), Federal Home Loan Banks (FHLB), Federal Farm Credit Banks (FFCB), Student Loan Marketing Association (SLMA), Tennessee Valley Authority (TVA) (collectively, \"Agency Securities\") having a remaining maturity of not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 0.985,
+              "haircut": 0.015,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.88,
+          "notes": "Successfully parsed US Agency collateral with 1-year maximum maturity constraint and 98.5% valuation (1.5% haircut). Standardized type validated against taxonomy. Single maturity bucket with clear upper bound. Confidence reduced due to: (1) extensive processing chain with 37 steps suggesting complexity or multiple iterations, (2) 9 ambiguity detection passes indicating potential data quality issues or edge cases, (3) null minimum maturity requiring assumption of zero lower bound. No validation failures detected. Key decisions: interpreted 'not more than 1 year' as max_maturity of 1.0 years with open lower bound, applied standard US_AGENCY classification, maintained single bucket structure for uniform treatment of sub-1-year securities."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities: negotiable debt obligations of the Federal National Mortgage Association (FNMA), Federal Home Loan Mortgage Corporation (FHLMC), Federal Home Loan Banks (FHLB), Federal Farm Credit Banks (FFCB), Student Loan Marketing Association (SLMA), Tennessee Valley Authority (TVA) (collectively, \"Agency Securities\") having a remaining maturity of not more than 1 year.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 0.7843000000000001,
+              "haircut": 0.2157,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency collateral with 1-year maximum maturity constraint. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 17 ambiguity resolution cycles with Sonnet model. Key decisions: (1) Standardized collateral type to US_AGENCY taxonomy, (2) Extracted maturity constraint of \u22641 year from source text, (3) Applied 78.43% valuation with 21.57% haircut to single maturity bucket. All taxonomy and logic validations passed. Confidence reduced from individual resolution scores (avg ~0.92) due to high number of processing iterations suggesting initial parsing complexity, but final output is internally consistent and validated. No conflicting maturity buckets or invalid taxonomy mappings detected."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 1 year but not more than 5 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency securities with 1-5 year maturity constraint. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 16 ambiguity resolution cycles with Sonnet model (avg confidence: 0.916). All taxonomy and logic validations passed. Key decisions: (1) Standardized collateral type to US_AGENCY, (2) Extracted maturity range from source text with clear boundaries (>1 year, \u22645 years), (3) Applied 100% valuation with 0% haircut as no discounts were specified in source data. High iteration count suggests complex source document or multiple collateral entries processed. Final confidence reduced from individual resolution scores (0.82-0.98 range) due to extensive processing cycles indicating potential complexity or edge cases in source material."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 1 year but not more than 5 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 2.0,
+              "valuation_percentage": 0.98,
+              "haircut": 0.02,
+              "original_text": null
+            },
+            {
+              "min_years": 2.0,
+              "max_years": 3.0,
+              "valuation_percentage": 0.97,
+              "haircut": 0.03,
+              "original_text": null
+            },
+            {
+              "min_years": 3.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.96,
+              "haircut": 0.04,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed US Agency collateral with 1-5 year maturity range and three distinct maturity buckets. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 19 ambiguity resolution cycles with Sonnet model (avg confidence: 0.92). All taxonomy and logic validations passed. Key decisions: (1) Standardized collateral type to US_AGENCY, (2) Extracted maturity range 1-5 years from source text, (3) Established three non-overlapping maturity buckets with progressive haircuts (2%, 3%, 4%), (4) Validated haircut-valuation complementarity (sum to 100%). Multiple synthesis iterations (9 total) refined output consistency. High confidence due to clear maturity boundaries, consistent haircut progression, and successful validation across all rule-based checks. Minor confidence reduction from extensive iterative processing suggests initial complexity in source data interpretation."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 1 year but not more than 5 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.9804,
+              "haircut": 0.0196,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully processed US Agency collateral with 1-5 year maturity range. Initial parse by Haiku model identified collateral type, maturity constraints, and haircut (1.96%). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 4 ambiguity resolution cycles with Sonnet model (avg confidence: 0.93). Multiple validation passes (taxonomy and logic) confirmed data integrity. The high number of processing steps suggests complex source data or iterative refinement, but final output is consistent and well-structured. Confidence reduced from individual step scores (0.88-0.98) to 0.92 due to extensive processing iterations required, though all validations passed successfully. Key decisions: standardized collateral type to US_AGENCY taxonomy, extracted precise maturity bounds (>1y, \u22645y), calculated haircut as complement of valuation percentage."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 1 year but not more than 5 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.7843000000000001,
+              "haircut": 0.2157,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency collateral with 1-5 year maturity range and 78.43% valuation (21.57% haircut). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 3 resolution cycles with 2 validation rounds. High confidence achieved through multiple ambiguity resolution iterations (0.945 and 0.977 confidence scores) and successful taxonomy/logic validation. The collateral type, maturity constraints, and haircut values are clearly defined with consistent data structure. Minor confidence reduction due to extensive iteration count suggesting initial parsing complexity, but final output is well-validated and internally consistent."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 5 years but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency securities with 5-10 year maturity constraint. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 19 ambiguity resolution cycles with Sonnet model (avg confidence: 0.916). The collateral type was correctly standardized to US_AGENCY taxonomy. Maturity bounds were clearly extracted from source text with no overlapping buckets. No haircut applied (100% valuation). All taxonomy and logic validations passed. High iteration count suggests initial parsing complexity, but final convergence with strong ambiguity resolution confidence (ranging 0.823-0.977) and successful validation indicates reliable output. The single maturity bucket structure is clean and unambiguous."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 5 years but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 7.0,
+              "valuation_percentage": 0.94,
+              "haircut": 0.06,
+              "original_text": null
+            },
+            {
+              "min_years": 7.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.93,
+              "haircut": 0.07,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency collateral with 5-10 year maturity range. The collateral type was correctly standardized to US_AGENCY taxonomy. Two maturity buckets were identified: 5-7 years (94% valuation, 6% haircut) and 7-10 years (93% valuation, 7% haircut). Processing involved extensive ambiguity detection and resolution across multiple iterations (25+ initial parses, 24+ ambiguity detection steps, 19+ resolution steps). All validations passed successfully. The high number of processing steps indicates complex source data that required iterative refinement. Final synthesis achieved consistent confidence scores around 0.91-0.95 across multiple validation rounds. Key decisions: maturity boundaries are exclusive at lower bound (>5 years) and inclusive at upper bound (\u226410 years); haircut increases with longer maturity reflecting higher interest rate risk."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 5 years but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.9259000000000001,
+              "haircut": 0.0741,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed US Agency securities with 5-10 year maturity range. Processing involved 25 initial parse attempts, 24 ambiguity detection cycles, and 19 ambiguity resolution steps with high confidence (avg 0.92). The collateral type was correctly standardized to US_AGENCY, maturity bounds were accurately extracted (5-10 years), and valuation/haircut percentages were properly calculated (92.59% valuation, 7.41% haircut). All taxonomy and logic validations passed. The extensive reasoning chain with multiple synthesis steps (24 total) and consistent confidence scores across resolution phases (ranging 0.82-0.98) indicates robust processing. Minor confidence reduction from perfect score due to the high number of processing iterations required, suggesting some initial parsing complexity, but final output is well-validated and internally consistent."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 5 years but not more than 10 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.7406999999999999,
+              "haircut": 0.2593,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency collateral with 5-10 year maturity bucket. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 19 ambiguity resolution cycles with Sonnet model (avg confidence: 0.92). Multiple synthesis iterations (24 total) converged on consistent output. Taxonomy and logic validations passed. High confidence in collateral type classification and maturity range extraction. Haircut of 25.93% (valuation 74.07%) derived correctly. No critical ambiguities remaining. Minor confidence reduction due to extensive iteration count suggesting initial parsing complexity, but final convergence across multiple synthesis steps indicates robust result."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 10 years but not more than 20 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": 20.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed US Agency securities with 10-20 year maturity constraint. Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 20 ambiguity resolution cycles with high confidence (avg 0.92). All taxonomy and logic validations passed. The collateral type is clearly defined with a specific maturity range (>10 years, \u226420 years), 100% valuation, and 0% haircut. No conflicting interpretations were detected. The high number of processing steps reflects thorough validation rather than complexity issues. Final confidence reflects strong consensus across multiple validation passes with consistent results."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 10 years but not more than 20 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": 20.0,
+              "valuation_percentage": 0.89,
+              "haircut": 0.11,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed US Agency collateral with 10-20 year maturity range and 89% valuation (11% haircut). Processing involved extensive multi-step validation through initial parsing (25 iterations), ambiguity detection (34 iterations), ambiguity resolution (20 iterations with average confidence 0.92), and synthesis (26 iterations with average confidence 0.92). All taxonomy and logic validations passed. High confidence due to: (1) clear collateral type identification, (2) unambiguous maturity bounds with explicit source text, (3) consistent valuation/haircut percentages that sum to 100%, (4) successful resolution of all detected ambiguities, and (5) multiple validation passes confirming data integrity. The extensive processing chain demonstrates thorough verification of a straightforward collateral specification."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 10 years but not more than 20 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": 20.0,
+              "valuation_percentage": 0.816,
+              "haircut": 0.184,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed US Agency collateral with 10-20 year maturity range. Processing involved 50 initial parse attempts, 44 ambiguity detection passes, and 34 ambiguity resolution cycles with high confidence (avg 0.92). Multiple synthesis iterations (25 total) converged on consistent output. Taxonomy and logic validations passed. The collateral type is clearly defined with explicit maturity bounds and a single haircut rate of 18.4% (valuation 81.6%). High confidence reflects strong consensus across multiple resolution cycles and successful validation, though extensive iteration count suggests initial complexity in parsing or system calibration."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 10 years but not more than 20 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 10.0,
+              "max_years": 20.0,
+              "valuation_percentage": 0.6528,
+              "haircut": 0.3472,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully processed US Agency collateral with 10-20 year maturity range. The pipeline executed 245+ reasoning steps across initial parsing (50 iterations), ambiguity detection (48 iterations), ambiguity resolution (24 iterations with avg confidence 0.925), taxonomy validation, logic validation, and synthesis (25 iterations with avg confidence 0.92). High confidence achieved through: (1) Consistent standardized_type identification as US_AGENCY across all parses, (2) Clear maturity bounds extraction (10-20 years) with explicit source text, (3) Accurate haircut calculation (34.72%) derived from valuation percentage (65.28%), (4) Successful validation passes confirming taxonomy compliance and logical consistency, (5) Strong consensus across multiple synthesis iterations (0.88-0.95 confidence range). Minor confidence reduction from perfect score due to iterative refinement needs, but final output demonstrates robust multi-model agreement and validation success."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 20 years but not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 20.0,
+              "max_years": 30.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed US Agency securities with 20-30 year maturity range. Processing involved 25 initial parse attempts, 24 ambiguity detection passes, and 20 ambiguity resolution cycles with high confidence (avg 0.92). Multiple synthesis iterations (24 total) converged on consistent output. Taxonomy and logic validations passed. The collateral type is clearly defined with explicit maturity bounds, no haircut applied (100% valuation), and proper standardization to US_AGENCY type. High confidence reflects strong consensus across multiple processing cycles and successful validation, with minor deduction for the extensive iteration count suggesting some initial parsing complexity."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 20 years but not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 20.0,
+              "max_years": 30.0,
+              "valuation_percentage": 0.87,
+              "haircut": 0.13,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.93,
+          "notes": "Successfully parsed US Agency collateral with 20-30 year maturity range and 87% valuation (13% haircut). Processing involved 50 initial parse attempts, 34 ambiguity detection passes, 20 ambiguity resolution cycles, 20 taxonomy validations, 20 logic validations, and 25 synthesis iterations. High confidence achieved through extensive multi-model consensus (haiku for parsing/detection, sonnet for resolution/synthesis, rule-based for validation). Average resolution confidence was 0.92, with all validations passing. Key decisions: (1) Standardized collateral type to US_AGENCY taxonomy, (2) Extracted precise maturity bounds (>20, \u226430 years), (3) Calculated haircut as complement of valuation percentage, (4) Validated maturity range logic and percentage calculations. No critical ambiguities remained unresolved."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 20 years but not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 20.0,
+              "max_years": 30.0,
+              "valuation_percentage": 0.816,
+              "haircut": 0.184,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed US Agency collateral with 20-30 year maturity range. Processing involved 50 initial parse attempts, 43 ambiguity detection passes, and 34 ambiguity resolution cycles with high confidence (avg 0.92). The collateral type was clearly identified with a single maturity bucket (20-30 years) and corresponding haircut of 18.4% (valuation 81.6%). All taxonomy and logic validations passed. The high number of processing steps indicates thorough validation through the multi-agent pipeline, with consistent results across iterations. Final confidence reflects strong consensus across resolution steps and successful validation of the standardized taxonomy and maturity logic."
+        },
+        {
+          "standardized_type": "US_AGENCY",
+          "base_description": "Agency Securities having a remaining maturity of greater than 20 years but not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": 20.0,
+              "max_years": 30.0,
+              "valuation_percentage": 0.6528,
+              "haircut": 0.3472,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency securities with 20-30 year maturity range. Processing involved 50 initial parse attempts, 49 ambiguity detection passes, and 29 ambiguity resolution cycles with Sonnet model (avg confidence: 0.92). Final synthesis achieved through 26 iterations. The collateral type was correctly standardized to US_AGENCY, maturity bounds were accurately extracted from source text, and valuation/haircut percentages (65.28%/34.72%) were properly calculated. All taxonomy and logic validations passed. High iteration count suggests complex document structure or multiple collateral entries processed, but final output is internally consistent and well-validated. Confidence slightly reduced from synthesis average (0.92) due to extensive processing cycles indicating potential complexity or edge cases encountered during parsing."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FHLMC Certificates. Mortgage participation certificates issued by FHLMC evidencing undivided interests or participations in pools of first lien conventional or FHA/VA residential mortgages or deeds of trust, guaranteed by FHLMC, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8190000000000001,
+              "haircut": 0.18100000000000002,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 81.9% valuation (18.1% haircut). Processing involved 25 initial parse attempts, 24 ambiguity detection passes, and 20 ambiguity resolution cycles with Sonnet model (avg confidence 0.925). Multiple synthesis iterations (25 total) converged on consistent output. Taxonomy and logic validations passed. High confidence despite extensive processing reflects complexity of source document and need for multiple validation passes to ensure accuracy of maturity constraints and haircut calculations. Key decision: Correctly identified single maturity bucket (0-30 years) rather than multiple buckets, with haircut applied uniformly across the range."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FHLMC Certificates. Mortgage participation certificates issued by FHLMC evidencing undivided interests or participations in pools of first lien conventional or FHA/VA residential mortgages or deeds of trust, guaranteed by FHLMC, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8190000000000001,
+              "haircut": 0.18100000000000002,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 81.9% valuation (18.1% haircut). Processing involved 25 initial parse attempts, extensive ambiguity detection (24 iterations), and 19 ambiguity resolution cycles with high confidence (avg 0.92). Multiple synthesis steps (23 iterations) converged on consistent output. Taxonomy and logic validations passed. The collateral type is clearly identified with a single maturity bucket applying uniformly. High iteration count suggests complex source document, but final consensus across all synthesis steps indicates robust extraction. Confidence slightly reduced from peak synthesis scores (0.92-0.95) due to processing complexity and volume of iterations required to reach consensus."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FHLMC Certificates. Mortgage participation certificates issued by FHLMC evidencing undivided interests or participations in pools of first lien conventional or FHA/VA residential mortgages or deeds of trust, guaranteed by FHLMC, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8640000000000001,
+              "haircut": 0.136,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 86.4% valuation (13.6% haircut). Processing involved 50 initial parse attempts, 34 ambiguity detection cycles, and 25 ambiguity resolution steps with high confidence (avg 0.92). The collateral type was consistently identified across all iterations. Taxonomy and logic validations passed. The single maturity bucket structure reflects the uniform treatment of all securities within the 30-year maturity limit. Confidence slightly reduced due to the extensive iteration count suggesting initial parsing complexity, though final consensus was strong across all resolution steps."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FHLMC Certificates. Mortgage participation certificates issued by FHLMC evidencing undivided interests or participations in pools of first lien conventional or FHA/VA residential mortgages or deeds of trust, guaranteed by FHLMC, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.6912,
+              "haircut": 0.30879999999999996,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint. The collateral type was consistently identified across all initial parse attempts. Multiple ambiguity detection and resolution cycles (25+ haiku passes, 20+ sonnet resolutions) converged on the same interpretation. Key decisions: (1) Standardized type classified as US_AGENCY_MBS, (2) Maximum maturity of 30 years extracted from source text, (3) Single maturity bucket created with 69.12% valuation (30.88% haircut), (4) No minimum maturity specified (null value appropriate). All validation checks passed (taxonomy and logic). High processing volume with consistent results across multiple synthesis steps (20+ sonnet synthesis passes with confidence scores ranging 0.88-0.95) indicates robust parsing. Final confidence slightly reduced from peak synthesis scores due to extensive iterative processing, but output remains highly reliable."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FNMA Certificates. Mortgage-backed pass-through certificates issued by FNMA evidencing undivided interests in pools of first lien mortgages or deeds of trust on residential properties, guaranteed by FNMA, having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8190000000000001,
+              "haircut": 0.18100000000000002,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 81.9% valuation (18.1% haircut). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 24 ambiguity resolution cycles with Sonnet model achieving average confidence of 0.92. Multiple synthesis iterations (25 total) converged on consistent output. Taxonomy and logic validations passed. Key decisions: (1) Standardized collateral type as US_AGENCY_MBS, (2) Extracted maximum maturity of 30 years with no minimum specified, (3) Applied single maturity bucket covering 0-30 years with uniform 18.1% haircut, (4) Validated haircut percentage consistency across all resolution attempts. High iteration count suggests complex source document requiring extensive disambiguation, but final consensus across multiple model passes indicates robust extraction quality."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FNMA Certificates. Mortgage-backed pass-through certificates issued by FNMA evidencing undivided interests in pools of first lien mortgages or deeds of trust on residential properties, guaranteed by FNMA, having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8190000000000001,
+              "haircut": 0.18100000000000002,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 81.9% valuation (18.1% haircut). Processing involved 25 initial parse attempts, 24 ambiguity detection passes, and 20 ambiguity resolution cycles with Sonnet model achieving consistently high confidence (0.82-0.98 range). Multiple synthesis iterations (25 total) converged on stable output. Taxonomy and logic validations passed. High iteration count suggests complex source document or multiple collateral entries, but final consensus achieved with strong model agreement. Key decision: Single maturity bucket structure with no minimum maturity threshold, reflecting standard agency MBS eligibility criteria."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FNMA Certificates. Mortgage-backed pass-through certificates issued by FNMA evidencing undivided interests in pools of first lien mortgages or deeds of trust on residential properties, guaranteed by FNMA, having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8640000000000001,
+              "haircut": 0.136,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 86.4% valuation (13.6% haircut). Processing involved 50 initial parse attempts, 34 ambiguity detection passes, 25 ambiguity resolution cycles, and 25 synthesis iterations. Multiple validation passes confirmed taxonomy compliance and logical consistency. The high number of processing iterations (134 total steps) suggests complex document structure or multiple collateral entries, but consensus was achieved across all synthesis steps with confidence scores ranging from 0.88-0.95. Key decisions: (1) Standardized collateral type as US_AGENCY_MBS, (2) Extracted maximum maturity of 30 years with no minimum specified, (3) Applied single haircut rate of 13.6% across the maturity range, (4) Validated that valuation and haircut percentages sum to 100%."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "FNMA Certificates. Mortgage-backed pass-through certificates issued by FNMA evidencing undivided interests in pools of first lien mortgages or deeds of trust on residential properties, guaranteed by FNMA, having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.6912,
+              "haircut": 0.30879999999999996,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 69.12% valuation percentage (30.88% haircut). Processing involved 25 initial parse attempts, 24 ambiguity detection cycles, and 20 ambiguity resolution steps with Sonnet model achieving average confidence of 0.92. Multiple synthesis iterations (23 total) converged on consistent output. Key decisions: (1) Standardized collateral type as US_AGENCY_MBS, (2) Extracted maximum maturity of 30 years with no minimum specified, (3) Applied single maturity bucket covering 0-30 years with uniform haircut, (4) Validated taxonomy and logical consistency through rule-based checks. High iteration count suggests complex source document requiring extensive processing, but final convergence and validation success support strong confidence in output accuracy."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "GNMA Certificates. Mortgage-backed pass-through certificates issued by private entities, evidencing undivided interests in pools of first lien mortgages or deeds of trust on single family residences, guaranteed by the Government National Mortgage Association (GNMA) with the full faith and credit of the United States, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8190000000000001,
+              "haircut": 0.18100000000000002,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 81.9% valuation (18.1% haircut). Processing involved extensive multi-stage validation through 230+ reasoning steps including initial parsing (50 iterations), ambiguity detection (50 iterations), ambiguity resolution (25 iterations with avg confidence 0.92), taxonomy validation, logic validation, and synthesis (25 iterations with avg confidence 0.92). The collateral type classification is clear and unambiguous. The maturity constraint is explicitly stated with no minimum specified. The haircut/valuation percentages are mathematically consistent (sum to 100%). High confidence supported by consistent resolution across multiple validation passes and rule-based checks confirming data integrity."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "GNMA Certificates. Mortgage-backed pass-through certificates issued by private entities, evidencing undivided interests in pools of first lien mortgages or deeds of trust on single family residences, guaranteed by the Government National Mortgage Association (GNMA) with the full faith and credit of the United States, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8190000000000001,
+              "haircut": 0.18100000000000002,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 81.9% valuation (18.1% haircut). Processing involved 25 initial parse attempts, extensive ambiguity detection (24 iterations), and 19 ambiguity resolution cycles with high confidence (avg 0.92). Multiple synthesis iterations (23 total) converged on consistent output. Taxonomy and logic validations passed. High iteration count suggests complex source document, but final consensus across multiple model passes indicates reliable extraction. Key decision: Single maturity bucket structure with upper bound only, reflecting typical agency MBS eligibility criteria."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "GNMA Certificates. Mortgage-backed pass-through certificates issued by private entities, evidencing undivided interests in pools of first lien mortgages or deeds of trust on single family residences, guaranteed by the Government National Mortgage Association (GNMA) with the full faith and credit of the United States, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.8640000000000001,
+              "haircut": 0.136,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 86.4% valuation (13.6% haircut). Processing involved 50 initial parse attempts, 44 ambiguity detection cycles, 25 ambiguity resolutions with high confidence (avg 0.92), and 25 synthesis steps. Multiple validation passes confirmed taxonomy compliance and logical consistency. The collateral type is clearly defined with a single maturity bucket applying uniformly. High confidence reflects strong consensus across resolution steps and successful validation, though extensive iteration cycles suggest initial parsing complexity. Key decision: Applied single haircut rate across entire maturity range as no sub-buckets were specified in source data."
+        },
+        {
+          "standardized_type": "US_AGENCY_MBS",
+          "base_description": "GNMA Certificates. Mortgage-backed pass-through certificates issued by private entities, evidencing undivided interests in pools of first lien mortgages or deeds of trust on single family residences, guaranteed by the Government National Mortgage Association (GNMA) with the full faith and credit of the United States, and having a remaining maturity of not more than 30 years.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 30.0,
+              "valuation_percentage": 0.6912,
+              "haircut": 0.30879999999999996,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Agency MBS collateral with 30-year maximum maturity constraint and 69.12% valuation percentage (30.88% haircut). The processing involved extensive multi-stage validation through 230+ reasoning steps including initial parsing by Haiku models, ambiguity detection and resolution by Sonnet models, and rule-based taxonomy/logic validation. High confidence achieved through consistent results across multiple resolution attempts (confidence scores ranging 0.82-0.98 with most above 0.92). Key decisions: (1) Standardized collateral type as US_AGENCY_MBS, (2) Extracted single maturity bucket with upper bound of 30 years and no lower bound specified, (3) Applied 69.12% valuation rate with corresponding 30.88% haircut. All validations passed successfully with no logical inconsistencies detected."
+        },
+        {
+          "standardized_type": "COMMERCIAL_PAPER",
+          "base_description": "Commercial Paper: Commercial Paper with a rating of at least P-1 by Moody's and at least A-1+ by S&P and having a remaining maturity of not more than 30 days.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 0.082,
+              "valuation_percentage": 0.8,
+              "haircut": 0.2,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed commercial paper collateral with 30-day maturity constraint and 80% valuation (20% haircut). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 23 ambiguity resolution cycles with high confidence (avg 0.92). Multiple synthesis iterations (25 total) converged on consistent output. Taxonomy and logic validations passed. The maturity conversion (30 days = 0.082 years) and haircut calculation (100% - 80% = 20%) were validated. High confidence reflects strong consensus across multiple processing chains and successful validation of all business rules."
+        },
+        {
+          "standardized_type": "COMMERCIAL_PAPER",
+          "base_description": "Commercial Paper: Commercial Paper with a rating of at least P-1 by Moody's and at least A-1+ by S&P and having a remaining maturity of not more than 30 days.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 0.082,
+              "valuation_percentage": 0.8,
+              "haircut": 0.2,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.93,
+          "notes": "Successfully parsed commercial paper collateral with 30-day maturity constraint and 80% valuation (20% haircut). Processing involved 25 initial parse attempts, 25 ambiguity detection passes, and 22 ambiguity resolution cycles with high confidence (avg 0.92). Multiple synthesis iterations (25 total) converged on consistent output. Taxonomy and logic validations passed. The maturity conversion (30 days = 0.082 years) and haircut calculation (100% - 80% = 20%) were validated. High confidence reflects strong consensus across multiple processing cycles and successful validation of all constraints."
+        },
+        {
+          "standardized_type": "COMMERCIAL_PAPER",
+          "base_description": "Commercial Paper: Commercial Paper with a rating of at least P-1 by Moody's and at least A-1+ by S&P and having a remaining maturity of not more than 30 days.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 0.082,
+              "valuation_percentage": 0.99,
+              "haircut": 0.01,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.94,
+          "notes": "Successfully parsed commercial paper collateral with 30-day maturity constraint. Processing involved 25 initial parse attempts, extensive ambiguity detection (24 iterations), and 24 ambiguity resolution cycles with high confidence (avg 0.925). Multiple synthesis iterations (24 total) converged on consistent output. Key decisions: (1) Standardized type as COMMERCIAL_PAPER, (2) Converted 30-day maturity to 0.082 years, (3) Applied 1% haircut (99% valuation), (4) Set min_maturity as null indicating no lower bound. All validation checks passed. High confidence justified by consistent multi-model agreement, successful validation, and clear source text interpretation."
+        },
+        {
+          "standardized_type": "COMMERCIAL_PAPER",
+          "base_description": "Commercial Paper: Commercial Paper with a rating of at least P-1 by Moody's and at least A-1+ by S&P and having a remaining maturity of not more than 30 days.",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 0.082,
+              "valuation_percentage": 0.792,
+              "haircut": 0.20800000000000002,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed commercial paper collateral with 30-day maturity constraint. The standardized type was correctly identified as COMMERCIAL_PAPER. Maturity conversion from 30 days to 0.082 years (30/365) was accurately calculated. The valuation percentage of 79.2% (haircut of 20.8%) was properly extracted and validated. Processing involved extensive multi-step validation through 250+ reasoning chain steps including initial parsing (haiku model), ambiguity detection and resolution (sonnet model with average confidence ~0.92), and rule-based taxonomy and logic validation. The high number of processing steps indicates thorough validation, though the repetitive nature suggests some redundancy in the pipeline. No critical ambiguities were detected, and all validations passed successfully. The final confidence of 0.92 reflects strong data quality with minor uncertainty around edge case handling in the maturity calculation methodology."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each applicable rating agency with such valuation percentages as determined by each applicable rating agency.",
+          "maturity_buckets": [],
+          "rating_event": "Moody's First Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.0,
+          "notes": "Processing failed at initial parse stage. All 56 initial parse attempts returned UNKNOWN standardized type with no maturity information or buckets. Despite 34 ambiguity detection attempts and 44 resolution attempts (with confidence scores ranging from 0.823-0.977), no valid collateral data was extracted. The 25 synthesis attempts (confidence 0.88-0.95) and validation steps could not recover meaningful data. This indicates either: (1) no collateral information was present in the source document, (2) the input format was incompatible with the parsing system, or (3) the collateral data was in an unrecognized format. Recommend manual review of source data and verification that collateral information exists in the input."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each applicable rating agency with such valuation percentages as determined by each applicable rating agency.",
+          "maturity_buckets": [],
+          "rating_event": "Moody's Second Trigger Event",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.0,
+          "notes": "Processing failed: The parsed data shows 'UNKNOWN' standardized type with no maturity information or buckets extracted. The reasoning chain indicates 256 processing steps across initial parsing, ambiguity detection, resolution, and synthesis phases, but no successful data extraction occurred. Multiple models (haiku for parsing/detection, sonnet for resolution/synthesis) were employed with confidence scores ranging from 0.82-0.98 in individual steps, yet the final output contains no actionable collateral data. This suggests either: (1) source data was missing/incomplete, (2) data format was unrecognizable, or (3) systematic extraction failure across all processing stages. Without valid collateral type, maturity information, or bucket data, this output cannot be used for downstream collateral analysis or risk assessment purposes."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each applicable rating agency with such valuation percentages as determined by each applicable rating agency.",
+          "maturity_buckets": [],
+          "rating_event": "S&P Approved Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.0,
+          "notes": "Processing failed: The reasoning chain shows 456 processing steps across initial parsing, ambiguity detection, resolution, and synthesis phases, but the final parsed data indicates no successful extraction. All standardized_type fields returned 'UNKNOWN', no maturity information was derived, and no maturity buckets were populated. Despite multiple model passes (haiku for initial parsing, sonnet for ambiguity resolution with confidence scores ranging 0.823-0.977, and rule-based validation), the pipeline was unable to extract any meaningful collateral information. This suggests either: (1) the source data was empty/invalid, (2) the data format was incompatible with all parsing strategies, or (3) a critical failure occurred early in the pipeline that propagated through all subsequent steps. The high number of processing attempts without successful output indicates systematic failure rather than data ambiguity."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each applicable rating agency with such valuation percentages as determined by each applicable rating agency.",
+          "maturity_buckets": [],
+          "rating_event": "S&P Required Ratings Downgrade",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.0,
+          "notes": "Processing failed: No collateral data could be extracted. The reasoning chain shows 56 initial parse attempts, 40 ambiguity detection steps, 44 ambiguity resolution attempts, and 48 synthesis attempts across multiple models (haiku and sonnet), but the final parsed data indicates 'UNKNOWN' standardized type with no maturity information or buckets. Despite high individual step confidences (ranging 0.82-0.98 for resolution steps and 0.88-0.95 for synthesis steps), the absence of any extracted collateral data in the final output indicates a fundamental failure in the data extraction pipeline. This suggests either: (1) no collateral data was present in the source document, (2) the data format was incompatible with the parsing logic, or (3) a critical error occurred in the initial parsing stage that propagated through all subsequent steps. The high number of repeated processing attempts (56 initial parses) suggests the system encountered persistent extraction failures and attempted multiple recovery strategies without success."
+        }
+      ],
+      "valuation_agent": "Party A; provided, however, that if an Event of Default shall have occurred with respect to which Party A is the Defaulting Party, Party B shall have the right to designate as Valuation Agent an independent party, reasonably acceptable to Party A, the cost for which shall be borne by Party A.",
+      "effective_date": "2008-03-31T00:00:00",
+      "confidence_scores": {
+        "agreement_info.agreement_title": 1.0,
+        "agreement_info.agreement_date": 1.0,
+        "agreement_info.party_a": 1.0,
+        "agreement_info.party_b": 1.0,
+        "agreement_info.exhibit_number": 1.0,
+        "core_margin_terms.party_a_threshold": 1.0,
+        "core_margin_terms.party_b_threshold": 1.0,
+        "core_margin_terms.party_a_min_transfer_amount": 1.0,
+        "core_margin_terms.party_b_min_transfer_amount": 1.0,
+        "core_margin_terms.rounding": 1.0,
+        "core_margin_terms.base_currency": 1.0,
+        "core_margin_terms.party_a_independent_amount ": 1.0,
+        "core_margin_terms.party_b_independent_amount ": 1.0,
+        "valuation_timing.valuation_agent": 1.0,
+        "valuation_timing.valuation_time": 1.0,
+        "valuation_timing.notification_time": 1.0,
+        "operational_details.delivery_timing": 1.0,
+        "column_info.valuation_column_count": 1.0
+      },
+      "source_document_id": "e7f5357f-4419-478e-95fe-b65c80304394",
+      "source_pages": {
+        "agreement_title": 0,
+        "agreement_date": 0,
+        "party_a": 0,
+        "party_b": 0,
+        "exhibit_number": 0,
+        "party_a_threshold": 4,
+        "party_b_threshold": 4,
+        "party_a_min_transfer_amount": 4,
+        "party_b_min_transfer_amount": 4,
+        "rounding": 4,
+        "party_a_independent_amount ": 4,
+        "party_b_independent_amount ": 4,
+        "valuation_agent": 4,
+        "valuation_time": 4,
+        "notification_time": 5
+      }
+    }
+  },
+  "errors": [],
+  "step_timings": {
+    "parse": 50.00629258155823,
+    "extract": 72.23512148857117,
+    "normalize": 164.52222657203674,
+    "map": 0.0070760250091552734,
+    "total": 286.78839635849
+  }
+}

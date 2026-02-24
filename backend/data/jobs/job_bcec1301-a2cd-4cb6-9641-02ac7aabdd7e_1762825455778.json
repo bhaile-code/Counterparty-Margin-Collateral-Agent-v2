@@ -1,0 +1,427 @@
+{
+  "job_id": "job_bcec1301-a2cd-4cb6-9641-02ac7aabdd7e_1762825455778",
+  "document_id": "bcec1301-a2cd-4cb6-9641-02ac7aabdd7e",
+  "status": "completed",
+  "current_step": "done",
+  "progress": 100,
+  "created_at": "2025-11-10T18:44:15.778128",
+  "updated_at": "2025-11-10T18:46:30.521379",
+  "started_at": "2025-11-10T18:44:17.302573",
+  "completed_at": "2025-11-10T18:46:30.521372",
+  "options": {
+    "normalize_method": "multi-agent",
+    "save_intermediate_steps": false,
+    "calculate_margin": false,
+    "portfolio_value": null
+  },
+  "results": {
+    "parse_id": "parse_bcec1301-a2cd-4cb6-9641-02ac7aabdd7e_20251110_184417",
+    "extraction_id": "extract_parse_bcec1301-a2cd-4cb6-9641-02ac7aabdd7e_20251110_184417_20251110_184441",
+    "normalized_collateral_id": "bcec1301-a2cd-4cb6-9641-02ac7aabdd7e",
+    "normalization_metadata": {
+      "overall_confidence": 0.8380625,
+      "requires_human_review": true,
+      "agents_used": [
+        "collateral",
+        "temporal",
+        "currency"
+      ],
+      "total_processing_time": 47.87083649635315
+    },
+    "csa_terms_id": "bcec1301-a2cd-4cb6-9641-02ac7aabdd7e",
+    "csa_terms": {
+      "party_a": "BARCLAYS BANK PLC",
+      "party_b": "WORLD OMNI AUTO RECEIVABLES TRUST 2007-B",
+      "party_a_threshold": 0.0,
+      "party_b_threshold": Infinity,
+      "party_a_minimum_transfer_amount": 100000.0,
+      "party_b_minimum_transfer_amount": 100000.0,
+      "party_a_independent_amount": 0.0,
+      "party_b_independent_amount": 0.0,
+      "rounding": 10000.0,
+      "currency": "USD",
+      "normalized_collateral_id": "bcec1301-a2cd-4cb6-9641-02ac7aabdd7e",
+      "eligible_collateral": [
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.95,
+          "notes": "Successfully processed CASH_USD collateral type with high confidence. The collateral represents US Dollar cash, which requires no maturity bucketing (maturity fields appropriately set to null). Standard valuation at 100% with 0% haircut applied, consistent with cash collateral treatment. Processing involved 20 initial parse attempts and 20 ambiguity detection steps, followed by 1 ambiguity resolution pass (confidence: 0.885), and successful rule-based validation for both taxonomy and logic. No structural ambiguities detected in the final output. The high number of processing steps suggests thorough validation, though the straightforward nature of cash collateral (no maturity considerations, standard valuation) supports the strong confidence score. Minor confidence reduction from perfect score due to the iterative processing chain, but final output is validated and production-ready."
+        },
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 0.8,
+              "haircut": 0.2,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed CASH_USD collateral with 20% haircut (80% valuation). Processing involved 20 initial parse attempts, 20 ambiguity detection passes, and 18 ambiguity resolution cycles with Sonnet model. All taxonomy and logic validations passed. Cash collateral correctly identified with no maturity constraints. High confidence despite multiple processing iterations - the repeated steps indicate thorough validation rather than errors. Individual resolution confidences ranged from 0.61 to 0.978, with most above 0.87. Final output is clean and consistent with standard cash collateral treatment."
+        },
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.95,
+          "notes": "Successfully processed CASH_USD collateral type. Initial parse was clean with straightforward classification. The reasoning chain shows 20 initial parse attempts and 20 ambiguity detection passes, suggesting thorough validation across multiple aspects. Two ambiguity resolution steps were performed with high confidence (0.885 each), followed by successful taxonomy and logic validation. Cash collateral is the simplest collateral type with no maturity considerations, 100% valuation, and 0% haircut - standard treatment across financial institutions. No self-corrections were needed after ambiguity resolution. High confidence justified by: (1) unambiguous collateral type, (2) consistent validation results, (3) standard market treatment for cash, and (4) successful rule-based validation passes."
+        },
+        {
+          "standardized_type": "CASH_USD",
+          "base_description": "Cash",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": null,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.95,
+          "notes": "Successfully processed CASH_USD collateral type with high confidence. The collateral represents US Dollar cash, which requires no maturity bucketing (maturity fields appropriately set to null). Standard valuation at 100% with 0% haircut applied, consistent with cash collateral treatment. Processing involved 20 initial parse attempts, 20 ambiguity detection steps, and 11 resolution cycles with sonnet model achieving confidence scores ranging from 0.875 to 0.948. All taxonomy and logic validations passed. The multiple processing iterations and consistent resolution outcomes across cycles reinforce the accuracy of the final output. Cash collateral is straightforward with no complex maturity structures or variable haircuts, contributing to high overall confidence."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of less than one year",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 0.9804,
+              "haircut": 0.0196,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.89,
+          "notes": "Successfully parsed US Treasury collateral with maturity \u22641 year. Applied 1.96% haircut (98.04% valuation). Processing involved 20 initial parse attempts, 20 ambiguity detection steps, and 20 resolution cycles with Sonnet model. Confidence scores across resolution steps ranged from 0.61 to 0.978, with mean ~0.88. Multiple self-corrections were needed (indicated by repeated step sequences), suggesting initial parsing complexity or ambiguity in source data. Final output validated against taxonomy and logic rules. Lower confidence (0.89 vs typical >0.95) reflects the extensive iteration required and variability in intermediate confidence scores, though the final structured output is internally consistent and properly formatted."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of less than one year",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 0.7843000000000001,
+              "haircut": 0.2157,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.89,
+          "notes": "Successfully parsed US Treasury collateral with maturity \u22641 year. Processing involved 20 initial parse attempts, 20 ambiguity detection steps, and 17 ambiguity resolution cycles with Sonnet model. Confidence scores across resolution steps ranged from 0.61 to 0.978, with median ~0.90. Multiple self-corrections were needed (17 resolution cycles), suggesting initial ambiguities in source data format or structure. Final validation passed taxonomy and logic checks. The relatively high number of processing iterations and variable confidence scores (particularly one low outlier at 0.61) reduce overall confidence to 0.89 despite successful final validation. Key decisions: standardized collateral type to US_TREASURY taxonomy, established single maturity bucket with upper bound of 1 year, confirmed haircut of 21.57% (valuation at 78.43%)."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of less than one year",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully processed US Treasury collateral with maturity up to 1 year. Initial parse identified the asset type and maturity bucket correctly. Multiple ambiguity resolution passes (8 iterations) were required to refine the interpretation, suggesting some complexity in the source document. All taxonomy and logic validations passed. The collateral accepts US Treasuries at 100% valuation with 0% haircut for securities maturing within 1 year. High confidence in final output despite multiple resolution iterations, as all validations succeeded and the data structure is internally consistent. Average resolution confidence across passes was 0.90, indicating strong model agreement on the final interpretation."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of less than one year",
+          "maturity_buckets": [
+            {
+              "min_years": null,
+              "max_years": 1.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Treasury collateral with maturity up to 1 year at 100% valuation and 0% haircut. Processing involved 20 initial parse attempts, 20 ambiguity detection passes, and 10 resolution cycles with Sonnet model (average confidence: 0.898). The high number of iterations suggests complex source data or multiple validation refinements. Final output passed taxonomy and logic validation. Confidence reduced from individual step averages due to the extensive iteration count, which may indicate edge cases or formatting challenges in the source document. The parsed structure is clean and internally consistent with standard collateral schedule conventions."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of one year or more but less than five years",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.9804,
+              "haircut": 0.0196,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Treasury collateral with 1-5 year maturity bucket. Processing involved 20 initial parse attempts, 20 ambiguity detection passes, and 16 ambiguity resolution cycles with Sonnet model (avg confidence: 0.906). All taxonomy and logic validations passed. The collateral type was clearly identified as US_TREASURY with well-defined maturity parameters and haircut/valuation percentages that sum to 100%. High iteration count suggests complex source document or multiple validation refinements, but final output is internally consistent and validated. Confidence reduced from individual resolution scores due to extensive processing iterations indicating potential source complexity or edge cases encountered during normalization."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of one year or more but less than five years",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.7843000000000001,
+              "haircut": 0.2157,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully processed US Treasury collateral with 1-5 year maturity bucket. Initial parse completed by Haiku model across 20 iterations, followed by ambiguity detection. Sonnet model resolved ambiguities across 15 resolution attempts with confidence scores ranging from 0.870 to 0.978 (average: 0.906). All taxonomy and logic validations passed. The haircut percentage (21.57%) and valuation percentage (78.43%) sum correctly to 100%. High confidence in collateral type classification and maturity bucket boundaries. Minor confidence reduction due to multiple resolution iterations suggesting some initial parsing complexity, but final output validated successfully through rule-based checks."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of one year or more but less than five years",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully parsed US Treasury collateral with 1-5 year maturity bucket. Processing involved 20 initial parse attempts, 20 ambiguity detection passes, and 12 ambiguity resolution cycles with Sonnet model (avg confidence: 0.90). All taxonomy and logic validations passed. The collateral type was clearly identified as US_TREASURY with a single maturity bucket showing 100% valuation and 0% haircut, indicating high-quality sovereign debt treatment. The multiple processing iterations suggest initial complexity or ambiguity in source data that was successfully resolved through the reasoning chain. Final confidence reflects strong model agreement (0.875-0.948 range across resolution steps) and successful validation, with minor deduction for the extensive processing required to reach consensus."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of one year or more but less than five years",
+          "maturity_buckets": [
+            {
+              "min_years": 1.0,
+              "max_years": 5.0,
+              "valuation_percentage": 0.97,
+              "haircut": 0.03,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 1-5 year maturity bucket. Processing involved 20 initial parse attempts, 20 ambiguity detection passes, and 20 resolution cycles with Sonnet model. Average resolution confidence was 0.88 (range: 0.61-0.98). All taxonomy and logic validations passed. The collateral type classification is highly confident, maturity bucket boundaries are clearly defined, and haircut/valuation percentages are complementary and valid. Lower overall confidence (0.92 vs individual high scores) reflects the extensive iteration required and variance in intermediate confidence scores, suggesting some complexity or ambiguity in the source data that required multiple resolution attempts. Key decisions: (1) Standardized to US_TREASURY type, (2) Consolidated to single maturity bucket 1-5 years, (3) Applied 3% haircut (97% valuation). No conflicting data detected in final output."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of five years or more but less than ten years",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.9259000000000001,
+              "haircut": 0.0741,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.89,
+          "notes": "Successfully processed US Treasury collateral with 5-10 year maturity bucket. Initial parse completed cleanly with standardized type identification. Ambiguity detection phase ran 20 iterations, followed by 4 resolution cycles with increasing confidence (0.885 \u2192 0.948). All taxonomy and logic validations passed. The haircut of 7.41% is consistent with typical market standards for medium-term US Treasuries. Final confidence reflects strong model agreement across resolution steps and successful validation, though multiple resolution iterations suggest some initial uncertainty in the parsing chain."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of five years or more but less than ten years",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.7406999999999999,
+              "haircut": 0.2593,
+              "original_text": null
+            }
+          ],
+          "rating_event": "S&P Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.89,
+          "notes": "Successfully processed US Treasury collateral with 5-10 year maturity bucket. Initial parse required ambiguity resolution through Sonnet model (3 resolution passes with confidence scores 0.885, 0.885, and 0.9). Haircut of 25.93% and valuation at 74.07% are complementary and validated. Taxonomy and logic validation passed. Confidence reduced from perfect score due to: (1) multiple ambiguity detection passes (20 iterations at step 2), (2) need for 3 separate ambiguity resolution cycles, and (3) lack of confidence scores in initial parsing phase. Final output represents consensus from resolution iterations with highest confidence at 0.9."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of five years or more but less than ten years",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 1.0,
+              "haircut": 0.0,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.92,
+          "notes": "Successfully parsed US Treasury collateral with 5-10 year maturity bucket. Processing involved 20 initial parse attempts, 20 ambiguity detection passes, and 14 ambiguity resolution cycles with Sonnet model (avg confidence: 0.907). The collateral type was clearly identified as US_TREASURY with a single maturity bucket showing full valuation (100%) and no haircut (0%). Multiple validation passes confirmed taxonomy compliance and logical consistency. High number of processing iterations suggests complex source document or multiple validation requirements, but final output converged to a clean, validated structure. Confidence reduced from maximum due to extensive processing chain required, though all validations passed successfully."
+        },
+        {
+          "standardized_type": "US_TREASURY",
+          "base_description": "Fixed-rate negotiable USD denominated debt obligations issued by the U.S. Treasury Department having a remaining maturity on such date of five years or more but less than ten years",
+          "maturity_buckets": [
+            {
+              "min_years": 5.0,
+              "max_years": 10.0,
+              "valuation_percentage": 0.94,
+              "haircut": 0.06,
+              "original_text": null
+            }
+          ],
+          "rating_event": "Moody's Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.91,
+          "notes": "Successfully processed US Treasury collateral with 5-10 year maturity bucket. Initial parse completed by haiku model across 20 iterations. Ambiguity detection phase identified potential issues requiring resolution. Sonnet model resolved ambiguities across 13 iterations with confidence scores ranging from 0.875 to 0.978 (average: 0.907). All taxonomy and logic validations passed. The collateral type, maturity range, and haircut/valuation percentages are clearly defined and internally consistent. High confidence in final output despite multiple processing iterations, as all validation steps confirmed data integrity."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each Relevant Rating Agency in writing with such Valuation Percentages as determined by each Relevant Rating Agency.",
+          "maturity_buckets": [],
+          "rating_event": "S&P First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.0,
+          "notes": "Processing failed: No collateral data was successfully parsed. The initial parse returned UNKNOWN type with empty maturity buckets, indicating the source data was either missing, unreadable, or in an unsupported format. Despite 20 initial parse attempts and 9 ambiguity resolution cycles (with confidence scores ranging from 0.875-0.948), no valid collateral information could be extracted. Multiple validation passes (taxonomy and logic validation) were executed but had no data to validate. The high number of processing attempts (68 total steps) without successful data extraction suggests fundamental issues with the input data quality or format compatibility. Recommendation: Review source data format and ensure it contains valid collateral information in a supported structure."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each Relevant Rating Agency in writing with such Valuation Percentages as determined by each Relevant Rating Agency.",
+          "maturity_buckets": [],
+          "rating_event": "S&P Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.0,
+          "notes": "Processing failed: No collateral data was successfully parsed. The initial parse returned UNKNOWN type with empty maturity buckets, indicating the source data was either missing, unreadable, or in an unsupported format. Despite 20 initial parse attempts, 20 ambiguity detection passes, and 6 resolution attempts by the Sonnet model (with individual confidences ranging from 0.875 to 0.948), no valid collateral information could be extracted. The reasoning chain shows repeated processing cycles but no substantive data transformation. Validation steps were executed but had no data to validate. This represents a complete parsing failure requiring manual review of the source document or data format correction."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each Relevant Rating Agency in writing with such Valuation Percentages as determined by each Relevant Rating Agency.",
+          "maturity_buckets": [],
+          "rating_event": "Moody's First Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.0,
+          "notes": "Processing failed at initial parse stage. All 20 initial_parse attempts using haiku model returned UNKNOWN standardized_type with empty maturity_buckets. Despite 20 ambiguity detection attempts and 7 resolution attempts using sonnet model (with individual confidences ranging from 0.875 to 0.948), no valid collateral data was extracted. The reasoning chain shows repeated failures across all processing steps (initial_parse, detect_ambiguities, resolve_ambiguities, validate_taxonomy, validate_logic), indicating either: (1) source data was empty/invalid, (2) data format was incompatible with parsing logic, or (3) systematic processing failure. No collateral type was identified, no maturity buckets were populated, and validation steps could not produce actionable results. Final confidence is 0.0 due to complete absence of parsed collateral information."
+        },
+        {
+          "standardized_type": "UNKNOWN",
+          "base_description": "Other: Other items of Credit Support approved by each Relevant Rating Agency in writing with such Valuation Percentages as determined by each Relevant Rating Agency.",
+          "maturity_buckets": [],
+          "rating_event": "Moody's Second Trigger Valuation Percentage",
+          "flat_valuation_percentage": null,
+          "flat_haircut": null,
+          "confidence": 0.15,
+          "notes": "Processing failed to extract meaningful collateral data. Initial parse by Haiku model (20 attempts) could not identify standardized collateral type or maturity buckets. Ambiguity detection phase (20 attempts) found no resolvable patterns. Sonnet model attempted resolution 5 times with varying confidence (0.875-0.948) but validation consistently failed. The source data likely lacks structured collateral information, contains unrecognizable format, or is completely missing collateral details. Recommend: (1) verify source data completeness, (2) check if alternative data extraction methods are needed, (3) manual review of original document required."
+        }
+      ],
+      "valuation_agent": "Party A",
+      "effective_date": "2007-09-26T00:00:00",
+      "confidence_scores": {
+        "agreement_info.agreement_title": 1.0,
+        "agreement_info.agreement_date": 1.0,
+        "agreement_info.party_a": 1.0,
+        "agreement_info.party_b": 1.0,
+        "agreement_info.exhibit_number": 1.0,
+        "core_margin_terms.party_a_threshold": 1.0,
+        "core_margin_terms.party_b_threshold": 1.0,
+        "core_margin_terms.party_a_min_transfer_amount": 1.0,
+        "core_margin_terms.party_b_min_transfer_amount": 1.0,
+        "core_margin_terms.rounding": 1.0,
+        "core_margin_terms.base_currency": 1.0,
+        "core_margin_terms.party_a_independent_amount ": 1.0,
+        "core_margin_terms.party_b_independent_amount ": 1.0,
+        "valuation_timing.valuation_agent": 1.0,
+        "valuation_timing.valuation_time": 1.0,
+        "valuation_timing.notification_time": 1.0,
+        "operational_details.delivery_timing": 1.0,
+        "column_info.valuation_column_count": 1.0
+      },
+      "source_document_id": "bcec1301-a2cd-4cb6-9641-02ac7aabdd7e",
+      "source_pages": {
+        "agreement_title": 0,
+        "agreement_date": 0,
+        "party_a": 0,
+        "party_b": 0,
+        "exhibit_number": 0,
+        "party_a_threshold": 12,
+        "party_b_threshold": 12,
+        "party_a_min_transfer_amount": 12,
+        "party_b_min_transfer_amount": 12,
+        "rounding": 12,
+        "base_currency": 7,
+        "party_a_independent_amount ": 12,
+        "party_b_independent_amount ": 12,
+        "valuation_agent": 13,
+        "valuation_time": 13,
+        "notification_time": 13,
+        "delivery_timing": 1,
+        "valuation_column_count": 11
+      }
+    }
+  },
+  "errors": [],
+  "step_timings": {
+    "parse": 23.788317441940308,
+    "extract": 61.5402045249939,
+    "normalize": 47.87138485908508,
+    "map": 0.008142232894897461,
+    "total": 133.21899700164795
+  }
+}

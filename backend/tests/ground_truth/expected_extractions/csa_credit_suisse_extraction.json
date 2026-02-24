@@ -1,0 +1,75 @@
+{
+  "document_id": "csa_credit_suisse",
+  "source_file": "Credit_Suisse_Fifth_Third_CSA.pdf",
+  "description": "Ground truth extraction data for Credit Suisse / Fifth Third Auto Trust 2008-1 CSA",
+  "expected_fields": {
+    "agreement_info": {
+      "agreement_title": "CREDIT SUPPORT ANNEX to the Schedule to the ISDA MASTER AGREEMENT",
+      "agreement_date": "March 31, 2008",
+      "party_a": "CREDIT SUISSE INTERNATIONAL",
+      "party_b": "FIFTH THIRD AUTO TRUST 2008-1",
+      "exhibit_number": "EX-10.7"
+    },
+    "core_margin_terms": {
+      "party_a_threshold": "Infinity",
+      "party_b_threshold": "Not Applicable",
+      "party_a_min_transfer_amount": "$50,000",
+      "party_b_min_transfer_amount": "$50,000",
+      "rounding": "$10,000",
+      "base_currency": "US Dollars",
+      "party_a_independent_amount": "Not Applicable",
+      "party_b_independent_amount": "Not Applicable"
+    },
+    "valuation_timing": {
+      "notification_time": "1:00 p.m., New York time",
+      "valuation_time": "close of business on the Local Business Day before the Valuation Date",
+      "valuation_agent": "Party A"
+    },
+    "operational_details": {
+      "delivery_timing": "on each Valuation Date"
+    },
+    "eligible_collateral_table": [
+      {
+        "collateral_type": "Cash: US Dollars in depository account form",
+        "valuation_percentages": ["100%", "100%", "100%", "80%"]
+      },
+      {
+        "collateral_type": "U.S. Treasury Securities: negotiable debt obligations issued by the U.S. Treasury Department having a remaining maturity of up to and not more than 1 year",
+        "valuation_percentages": ["100%", "100%", "98.9%", "79.1%"]
+      },
+      {
+        "collateral_type": "Treasuries having a remaining maturity of greater than 1 year but not more than 10 years",
+        "valuation_percentages": [
+          "100%",
+          "99% (1-2yr) 98% (2-3yr) 97%(3-5yr) 96% (5-7yr) 94% (7-10yr)",
+          "98.04% (1-5yr) 92.59% (5-10yr)",
+          "78.43% (1-5yr) 74.07% (5-10yr)"
+        ]
+      },
+      {
+        "collateral_type": "Treasuries having a remaining maturity of greater than 10 years",
+        "valuation_percentages": [
+          "100%",
+          "90% (10-20yr) 88% (>20yr)",
+          "86.9%(10-20yr) 84.6% (>20yr)",
+          "69.52% (10-20yr) 64.00% (>20yr)"
+        ]
+      }
+    ],
+    "column_info": {
+      "valuation_column_count": 4,
+      "valuation_column_names": [
+        "Moody's First Trigger Event",
+        "Moody's Second Trigger Event",
+        "S&P Approved Ratings Downgrade",
+        "S&P Required Ratings Downgrade"
+      ]
+    }
+  },
+  "notes": [
+    "This is a simplified version focusing on core extractable fields",
+    "Threshold has complex conditional logic - simplified to base value 'Infinity'",
+    "Collateral table has 4 rating event columns with different valuation percentages",
+    "Signature blocks omitted as they vary by execution"
+  ]
+}

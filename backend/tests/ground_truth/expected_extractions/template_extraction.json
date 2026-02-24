@@ -1,0 +1,62 @@
+{
+  "document_id": "template",
+  "source_file": "template.pdf",
+  "description": "Template for creating ground truth extraction data",
+  "expected_fields": {
+    "agreement_info": {
+      "agreement_title": "Credit Support Annex",
+      "agreement_date": "YYYY-MM-DD",
+      "party_a": "Party A Legal Name",
+      "party_b": "Party B Legal Name",
+      "exhibit_number": "Exhibit X"
+    },
+    "core_margin_terms": {
+      "party_a_threshold": "$X,XXX,XXX or Infinity",
+      "party_b_threshold": "$X,XXX,XXX or Infinity",
+      "party_a_mta": "$XXX,XXX or Not Applicable",
+      "party_b_mta": "$XXX,XXX or Not Applicable",
+      "rounding": "$XX,XXX",
+      "base_currency": "US Dollars or other currency",
+      "party_a_independent_amount": "$XXX,XXX or Not Applicable",
+      "party_b_independent_amount": "$XXX,XXX or Not Applicable"
+    },
+    "valuation_timing": {
+      "notification_time": "X:XX p.m., City time",
+      "valuation_time": "close of business or specific time",
+      "valuation_agent": "Party A or Party B or Both"
+    },
+    "operational_details": {
+      "delivery_timing": "delivery time description"
+    },
+    "eligible_collateral_table": [
+      {
+        "collateral_type": "Cash in US Dollars",
+        "valuation_percentages": ["100%"]
+      },
+      {
+        "collateral_type": "US Treasury Securities",
+        "valuation_percentages": ["99% (1-2yr)", "98% (2-3yr)", "97% (3-5yr)"]
+      }
+    ],
+    "column_info": {
+      "rating_event_column_a": "Column A description",
+      "rating_event_column_b": "Column B description",
+      "column_count": 2
+    },
+    "signature_blocks": {
+      "party_a_signer": "Signer Name",
+      "party_a_title": "Title",
+      "party_a_date": "YYYY-MM-DD",
+      "party_b_signer": "Signer Name",
+      "party_b_title": "Title",
+      "party_b_date": "YYYY-MM-DD"
+    }
+  },
+  "notes": [
+    "Replace all template values with actual values from the document",
+    "Use exact text as it appears in the PDF",
+    "For currency amounts, include symbols and commas as shown",
+    "For dates, use ISO format YYYY-MM-DD",
+    "For 'Infinity' or 'Not Applicable', use exact wording from document"
+  ]
+}
