@@ -29,11 +29,14 @@ venv/
 ENV/
 env/
 .virtualenv/
+backend/.venv/
 
 # Environment variables
 .env
 .env.local
 .env.*.local
+backend/.env
+backend/.env.local
 
 # IDE
 .vscode/
@@ -57,6 +60,10 @@ htmlcov/
 backend/data/pdfs/*.pdf
 backend/data/parsed/*.json
 backend/data/extractions/*.json
+backend/data/normalized_collateral/*.json
+backend/data/csa_terms/*.json
+backend/data/calculations/*.json
+backend/data/explanations/*.json
 
 # Keep directory structure files
 !backend/data/pdfs/.gitkeep
@@ -65,20 +72,32 @@ backend/data/extractions/*.json
 
 # Logs
 *.log
+server*.log
+backend/*.log
+
+# Temporary extraction files
+backend/extraction_result*.json
 
 # OS artifacts
 nul
 Thumbs.db
 .DS_Store
 
+# Python version files
+.python-version
+
 # Temporary deletion folder
 z_delete/
 
-# UV lock files (optional - uncomment if you want to exclude)
-# uv.lock
-
-# Workdocs 
+# Workdocs (development notes)
 docs/
 CLAUDE.md
-z_delete/
+backend/CLAUDE.md
 scripts/
+
+# Frontend build artifacts
+frontend/node_modules/
+frontend/dist/
+frontend/.next/
+frontend/.nuxt/
+frontend/.cache/
